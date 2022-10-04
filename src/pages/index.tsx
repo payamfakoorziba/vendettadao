@@ -5,8 +5,8 @@ import Navbar from "components/Navbar";
 export default function Home() {
   return (
     <>
-      <Navbar />
-      {/* <Example /> */}
+      {/* <Navbar /> */}
+      <Example />
       <main className="container min-h-screen grid pt-48 md:pt-0 md:place-items-center">
         
         <div className="md:text-center">
