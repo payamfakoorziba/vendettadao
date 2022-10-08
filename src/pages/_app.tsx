@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { AppProps } from 'next/app'
 import 'styles/index.css'
+import Navbar from 'components/Navbar'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -9,7 +10,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>NextJS TW</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Component {...pageProps} />
+      <div className="relative bg-gray-800">
+        <Navbar />
+        <Component {...pageProps} />
+      </div>
     </>
   )
 }

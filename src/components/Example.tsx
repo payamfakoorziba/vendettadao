@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { SplitCard } from './SplitCard'
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -150,12 +151,7 @@ export function Example() {
           />
         </div>
       </div>
-      <div className="bg-red-500">
-        <video className="min-w-full min-h-full object-cover" autoPlay>
-          <source src='C:\Users\Payam\Desktop\vendettadao\public\video.mp4' type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+      
     </>
 
 
