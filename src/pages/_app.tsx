@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>NextJS TW</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="relative bg-gray-800">
+      <div className="relative bg-black">
         <Navbar />
         <Component {...pageProps} />
       </div>
