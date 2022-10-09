@@ -13,6 +13,11 @@ module.exports = {
       },
       center: true
     },
+    extend: {
+      fontFamily: {
+        "serif": ["Rye", "serif"],
+      }  
+    },
   },
   variants: {},
   plugins: [],

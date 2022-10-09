@@ -1,4 +1,16 @@
+@import 'https://rsms.me/inter/inter.css';
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+
+ul {
+  @apply ml-4;
+}
+
+/* color the disc */
+ul li {
+  @apply marker:text-orange-500
+}
