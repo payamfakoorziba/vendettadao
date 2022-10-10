@@ -17,58 +17,19 @@ export default function Home() {
       </Hero>
 
       <main>
-        {/* <div className="relative">
-          <img
-            src="/learn_more_image.jpg"
-            alt="learn more"
-            className="w-full absolute inset-0 h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-current"></div>
 
-          <div className="relative z-10 inset-0 grid grid-cols-2">
-            <div className="ml-7 flex justify-center flex-col text-white">
-              <p>
-                The VendettaDAO will provide governance to the Vendetta Ecosystem. By harnessing the
-                power of the DAO, we can best position the project to serve the best interests of
-                the community as whole. The governance provided can steer the project in new
-                directions to tackle new challenges.
-              </p>{" "}
-              <br />
-              <ul className="ml-4 text-left list-disc">
-                <li>Manage Guild Treasury</li>
-                <li>Select new projects</li>
-                <li>Change rules for community</li>
-                <li>Govern Vendetta Token</li>
-                <li>Vote on community issues</li>
-              </ul>
-              <br />
-              <p>
-                Starting an organization with someone that involves funding and money requires much
-                trust in the people you’re working with. But it’s hard to trust someone you’ve only
-                ever interacted with on the internet. With DAOs, you don’t need to trust anyone else
-                in the group, just the DAO’s code, which is 100% transparent and verifiable by
-                anyone.
-              </p>
-            </div>
-          </div>
-        </div> */}
-
-        {/* <div className="relative">
-          <img
-            src="/learn_more_image.jpg"
-            alt="learn more"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/80"></div>
-          <div className="container max-w-screen-xl mx-auto relative py-12">
+        {/* Overview */}
+        <div className="container max-w-screen-xl mx-auto relative py-12 grid 
+          md:grid-cols-2 gap-8 border-t border-orange-900 bg-neutral-900/50">
+          <div>
             <h2 className="text-white text-3xl font-semibold mb-4">Overview</h2>
             <div className="text-neutral-300 max-w-lg">
               <p>
-                The VendettaDAO will provide governance to the Vendetta Ecosystem. By harnessing the
-                power of the DAO, we can best position the project to serve the best interests of
-                the community as whole. The governance provided can steer the project in new
+                The <span className="text-orange-400">VendettaDAO</span> will provide governance to the <span className="text-orange-400">Vendetta Ecosystem</span>. By harnessing
+                the power of the DAO, we can best position the project to serve the best interests
+                of the <span className="text-orange-400">community</span> as whole. The governance provided can steer the project in new
                 directions to tackle new challenges.
-              </p>{" "}
+              </p>
               <br />
               <ul className="text-left list-disc">
                 <li>Manage Guild Treasury</li>
@@ -79,62 +40,63 @@ export default function Home() {
               </ul>
               <br />
               <p>
-                Starting an organization with someone that involves funding and money requires much
-                trust in the people you’re working with. But it’s hard to trust someone you’ve only
-                ever interacted with on the internet. With DAOs, you don’t need to trust anyone else
-                in the group, just the DAO’s code, which is 100% transparent and verifiable by
-                anyone.
+                Starting an organization with someone that involves funding and money requires
+                much trust in the people you’re working with. But it’s hard to trust someone
+                you’ve only ever interacted with on the internet. With DAOs, you don’t need to
+                trust anyone else in the group, just the DAO’s code, which is 100% transparent and
+                verifiable by anyone.
               </p>
             </div>
           </div>
-        </div> */}
-
-        <div className="border-y border-orange-900 bg-neutral-900/50">
-          {/* <img
+          <img
             src="/learn_more_image.jpg"
             alt="learn more"
-            className="absolute inset-0 w-full h-full object-cover"
-          /> */}
-          {/* <div className="absolute inset-0 bg-black/80"></div> */}
-          <div className="container max-w-screen-xl mx-auto relative py-12 grid md:grid-cols-2 gap-8">
-            <div>
-              <h2 className="text-white text-3xl font-semibold mb-4">Overview</h2>
-              <div className="text-neutral-300 max-w-lg">
-                <p>
-                  The VendettaDAO will provide governance to the Vendetta Ecosystem. By harnessing
-                  the power of the DAO, we can best position the project to serve the best interests
-                  of the community as whole. The governance provided can steer the project in new
-                  directions to tackle new challenges.
-                </p>{" "}
-                <br />
-                <ul className="text-left list-disc">
-                  <li>Manage Guild Treasury</li>
-                  <li>Select new projects</li>
-                  <li>Change rules for community</li>
-                  <li>Govern Vendetta Token</li>
-                  <li>Vote on community issues</li>
-                </ul>
-                <br />
-                <p>
-                  Starting an organization with someone that involves funding and money requires
-                  much trust in the people you’re working with. But it’s hard to trust someone
-                  you’ve only ever interacted with on the internet. With DAOs, you don’t need to
-                  trust anyone else in the group, just the DAO’s code, which is 100% transparent and
-                  verifiable by anyone.
-                </p>
-              </div>
+            className="w-full h-full object-cover rounded-xl"
+          />
+        </div>
+
+        {/* Token */}
+
+        <div className="container max-w-screen-xl mx-auto relative py-12 grid 
+          md:grid-cols-2 gap-8 bg-neutral-900/50">
+          <video className="min-w-full min-h-full object-cover" autoPlay playsInline muted loop>
+            <source src='/nft.mp4' type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div>
+            <h2 className="text-white text-3xl font-semibold mb-4">Vendetta Token ($VDT)</h2>
+            <div className="text-neutral-300 max-w-lg">
+              <p>
+                The <span className="text-orange-400">Vendetta token</span> is the lifeblood
+                of our ecosystem and the native token of the
+                Vendetta ecosystem.  It is our <span className="text-orange-400"> in-game currency</span>
+                and has numerous other utility benefits to the holder.  Pre-sale and Public sale
+                proceeds of tokens will be a welcome inflow of early capital.
+              </p>
+              <br />
+              <ul className="text-left list-disc">
+                <li>Stake for income</li>
+                <li>DAO Governance</li>
+                <li>Stake for offers</li>
+                <li>Ecosystem currency</li>
+                <li>Game rewards</li>
+              </ul>
+              <br />
+              <p>
+                We continually work to improve existing game or build new games to further enhance 
+                the token’s utility.  Ensuring that $VDT has the ability to grow while performing
+                 the role of an in-game token is a core focus of the Vendetta team.  We know the 
+                 ramifications of a token build on unsound principals.  The tokenomics of the $VDT 
+                 token were rigorously determined to ensure an optimal distribution.  Making sure 
+                 we have enough tokens in the right hans is key to our success.
+              </p>
             </div>
-            <img
-              src="/learn_more_image.jpg"
-              alt="learn more"
-              className="w-full h-full object-cover rounded-xl"
-            />
           </div>
+
         </div>
 
         {/* Partners  */}
-
-        <div className="container py-6">
+        <div className="container py-6 max-w-screen-xl">
           <h2 className="text-white text-3xl font-semibold mb-4 text-center">Partners</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 justify-items-center gap-7">
             <img src="/white_logo.png" alt="logo" />
