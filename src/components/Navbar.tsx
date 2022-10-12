@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 
 const Navbar = () => {
-
   return (
     <nav className="bg-neutral-900 p-6 sticky top-0 z-20 inset-x-0">
       <div className="flex items-center justify-between flex-wrap  max-w-screen-xl mx-auto">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <span className="font-semibold text-xl tracking-tight">Tailwind CSS</span>
+          <img className="h-10" src="/vendettadaoLogo.png" alt="logo" />
+          <span className="font-semibold text-xl tracking-tight">Vendetta DAO</span>
         </div>
+        {/* Menu button */}
         <div className="block lg:hidden">
           <button className="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-white hover:border-white">
             <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -17,15 +18,24 @@ const Navbar = () => {
           </button>
         </div>
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div className="text-sm lg:flex-grow">
+          <div className="text-base lg:flex-grow">
+            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+              Home
+            </a>
+            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+              DEX
+            </a>
+            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+              Store
+            </a>
             <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
               Docs
             </a>
             <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-              Examples
+              Social Media
             </a>
-            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white">
-              Blog
+            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+              Contact
             </a>
           </div>
           <div>

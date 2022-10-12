@@ -1,5 +1,6 @@
 import { Button } from "components/Button";
 import { Example } from "components/Example";
+import { Footer } from "components/Footer";
 import { Hero } from "components/hero";
 import Navbar from "components/Navbar";
 import { SplitCard } from "components/SplitCard";
@@ -109,6 +110,10 @@ export default function Home() {
             <img src="/white_logo.png" alt="logo" />
           </div>
         </div>
+        
+        {/* footer component */}
+        <Footer />
+
       </main>
     </>
   );
