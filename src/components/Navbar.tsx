@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -19,27 +20,29 @@ const Navbar = () => {
         </div>
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
           <div className="text-base lg:flex-grow">
-            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-8">
               Home
             </a>
-            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+            <a className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-8">
               DEX
             </a>
-            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+            <a className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-8">
               Store
             </a>
-            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+            <a className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-8">
               Docs
             </a>
-            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
+            <a className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-8">
               Social Media
             </a>
-            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4">
-              Contact
-            </a>
+            <Link href="/about">
+              <a className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-8">
+                Contact
+              </a>
+            </Link>
           </div>
           <div>
-            <a href="#responsive-header" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0">
+            <a className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0">
               Download
             </a>
           </div>

@@ -16,6 +16,8 @@ module.exports = {
     extend: {
       fontFamily: {
         "serif": ["Rye", "serif"],
+        "sans": ["Roboto", "sans-serif"],
+        // "stinky": ["Times New Roman", "cursive"]
       }  
     },
   },
