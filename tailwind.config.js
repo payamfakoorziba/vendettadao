@@ -18,9 +18,11 @@ module.exports = {
         "serif": ["Rye", "serif"],
         "sans": ["Roboto", "sans-serif"],
         // "stinky": ["Times New Roman", "cursive"]
-      }  
+      },
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms"),
+  ],
 };

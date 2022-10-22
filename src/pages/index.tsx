@@ -115,9 +115,6 @@ export default function Home() {
             <img src="/white_logo.png" alt="logo" />
           </div>
         </div>
-        
-        {/* footer component */}
-        <Footer />
 
       </main>
     </>

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { AppProps } from 'next/app'
 import 'styles/index.css'
 import Navbar from 'components/Navbar'
+import { Footer } from 'components/Footer'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div className="relative bg-black">
         <Navbar />
         <Component {...pageProps} />
+        <Footer />
       </div>
     </>
   )

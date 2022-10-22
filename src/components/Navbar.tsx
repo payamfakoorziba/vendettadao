@@ -20,9 +20,11 @@ const Navbar = () => {
         </div>
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
           <div className="text-base lg:flex-grow">
-            <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-8">
-              Home
-            </a>
+            <Link href="/">
+              <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-8">
+                Home
+              </a>
+            </Link>
             <a className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-8">
               DEX
             </a>
