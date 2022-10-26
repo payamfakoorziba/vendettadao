@@ -1,6 +1,3 @@
-import { Button } from "components/Button";
-import { Example } from "components/Example";
-import { Footer } from "components/Footer";
 import { Hero } from "components/hero";
 import Navbar from "components/Navbar";
 import { SplitCard } from "components/SplitCard";
@@ -10,7 +7,13 @@ export default function Home() {
   return (
     <>
       <Hero>
-        <h1 className="font-serif text-center text-6xl lg:text-8xl text-white tracking-tight font-bold">
+        <h1 className="font-serif
+        text-center
+        text-6xl
+        lg:text-8xl
+        text-accent-300
+        tracking-tight
+        font-bold">
           VENDETTA DAO
         </h1>
         <h3 className="text-2xl md:text-3xl text-neutral-200 font-medium">
@@ -21,8 +24,17 @@ export default function Home() {
       <main>
 
         {/* Overview */}
-        <div className="container max-w-screen-xl mx-auto relative py-12 grid 
-          md:grid-cols-2 gap-8 border-t border-orange-900 bg-neutral-900/50">
+        <div className="container
+        max-w-screen-xl
+        mx-auto
+        relative
+        py-12
+        grid 
+        md:grid-cols-2
+        gap-8
+        border-t
+      border-accent-800
+      bg-neutral-900/50">
           <div>
             <h2 className="text-white text-3xl font-semibold mb-4">Overview</h2>
             <div className="text-neutral-300 max-w-lg">
@@ -89,12 +101,12 @@ export default function Home() {
               </ul>
               <br />
               <p>
-                We continually work to improve existing game or build new games to further enhance 
+                We continually work to improve existing game or build new games to further enhance
                 the token’s utility.  Ensuring that $VDT has the ability to grow while performing
-                 the role of an in-game token is a core focus of the Vendetta team.  We know the 
-                 ramifications of a token build on unsound principals.  The tokenomics of the $VDT 
-                 token were rigorously determined to ensure an optimal distribution.  Making sure 
-                 we have enough tokens in the right hans is key to our success.
+                the role of an in-game token is a core focus of the Vendetta team.  We know the
+                ramifications of a token build on unsound principals.  The tokenomics of the $VDT
+                token were rigorously determined to ensure an optimal distribution.  Making sure
+                we have enough tokens in the right hans is key to our success.
               </p>
             </div>
           </div>

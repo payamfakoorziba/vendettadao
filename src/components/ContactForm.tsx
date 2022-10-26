@@ -19,11 +19,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Contact() {
+export default function ContactForm() {
   const [agreed, setAgreed] = useState(false)
 
   return (
-    <div className="overflow-hidden bg-neutral-900/50 py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
+    <div className="overflow-hidden py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
       <div className="relative mx-auto max-w-xl">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">Contact sales</h2>
@@ -44,7 +44,9 @@ export default function Contact() {
                   name="first-name"
                   id="first-name"
                   autoComplete="given-name"
-                  className="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-orange-500 focus:ring-orange-500"
+                  className="block w-full rounded-md
+                   border-gray-300 py-3 px-4 shadow-sm bg-gray-200
+                    focus:border-accent-500 focus:ring-accent-500"
                 />
               </div>
             </div>
@@ -58,7 +60,9 @@ export default function Contact() {
                   name="last-name"
                   id="last-name"
                   autoComplete="family-name"
-                  className="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-orange-500 focus:ring-orange-500"
+                  className="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm
+                   focus:border-accent-500 focus:ring-accent-500
+                   bg-gray-200"
                 />
               </div>
             </div>
@@ -72,7 +76,7 @@ export default function Contact() {
                   name="company"
                   id="company"
                   autoComplete="organization"
-                  className="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-orange-500 focus:ring-orange-500"
+                  className="block w-full bg-gray-200 rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-accent-500 focus:ring-accent-500"
                 />
               </div>
             </div>
@@ -86,7 +90,8 @@ export default function Contact() {
                   name="email"
                   type="email"
                   autoComplete="email"
-                  className="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-orange-500 focus:ring-orange-500"
+                  className="block w-full bg-gray-200
+                   rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-accent-500 focus:ring-accent-500"
                 />
               </div>
             </div>
@@ -102,7 +107,7 @@ export default function Contact() {
                   <select
                     id="country"
                     name="country"
-                    className="h-full rounded-md border-transparent bg-transparent py-0 pl-4 pr-8 text-gray-500 focus:border-orange-500 focus:ring-orange-500"
+                    className="h-full rounded-md border-transparent bg-transparent py-0 pl-4 pr-8 text-gray-500 focus:border-accent-500 focus:ring-accent-500"
                   >
                     <option>US</option>
                     <option>CA</option>
@@ -114,7 +119,8 @@ export default function Contact() {
                   name="phone-number"
                   id="phone-number"
                   autoComplete="tel"
-                  className="block w-full rounded-md border-gray-300 py-3 px-4 pl-20 focus:border-orange-500 focus:ring-orange-500"
+                  className="block w-full rounded-md border-gray-300 
+                  bg-gray-200 py-3 px-4 pl-20 focus:border-accent-500 focus:ring-accent-500"
                   placeholder="+1 (555) 987-6543"
                 />
               </div>
@@ -128,7 +134,7 @@ export default function Contact() {
                   id="message"
                   name="message"
                   rows={4}
-                  className="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-orange-500 focus:ring-orange-500"
+                  className="block w-full bg-gray-200 rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-accent-500 focus:ring-accent-500"
                   defaultValue={''}
                 />
               </div>
@@ -136,7 +142,25 @@ export default function Contact() {
             <div className="sm:col-span-2">
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-orange-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="inline-flex
+                w-full
+                items-center
+                justify-center
+                rounded-md
+                border
+                border-transparent
+                bg-accent-700
+                px-6
+                py-3
+                text-base
+                font-medium
+                text-white
+                shadow-sm
+                hover:bg-accent-800
+                focus:outline-none
+                focus:ring-2
+                focus:ring-accent-500
+                focus:ring-offset-2"
               >
                 Let's talk
               </button>
