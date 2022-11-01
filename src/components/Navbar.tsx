@@ -5,27 +5,27 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Home', href: '/' },
+  { name: 'DEX', href: '#' },
+  { name: 'Store', href: '#' },
+  { name: 'Docs', href: '#' },
+  { name: 'Social Media', href: '/stinky' },
+  { name: 'Contact', href: '/contact' },
 ]
 
 const Navbar = () => {
   return (
+
     // <nav className="bg-neutral-900 p-6 sticky top-0 z-20 inset-x-0">
     //   <div className="flex items-center justify-between flex-wrap  max-w-screen-xl mx-auto">
     //     <div className="flex items-center flex-shrink-0 text-white mr-6">
     //       <img className="h-10" src="/vendettadaoLogo.png" alt="logo" />
     //       <span className="font-semibold text-xl tracking-tight">Vendetta DAO</span>
     //     </div>
-    //     {/* Menu button */}
+    //     Menu button
     //     <div className="block lg:hidden">
     //       <button className="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-white hover:border-white">
-    //         <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-    //           <title>Menu</title>
-    //           <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-    //         </svg>
+    //         <Bars3Icon className="h-6 w-6" aria-hidden="true" />
     //       </button>
     //     </div>
     //     <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
@@ -55,33 +55,40 @@ const Navbar = () => {
     //           </a>
     //         </Link>
     //       </div>
-    //       <div>
-    //         <a className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0">
-    //           Download
-    //         </a>
-    //       </div>
     //     </div>
     //   </div>
     // </nav>
 
-    <Popover as="header" className="relative z-10">
-      <div className="bg-gray-900 pt-6">
+    <Popover as="header" className="relative z-20" >
+      <div className="bg-gray-900 p-4">
         <nav
           className="relative mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6"
-          aria-label="Global"
         >
-          <div className="flex flex-1 items-center">
+          <div className="flex flex-1 items-center ">
             <div className="flex w-full items-center justify-between md:w-auto">
+              {/* Logo */}
               <a href="#">
                 <span className="sr-only">Your Company</span>
                 <img
-                  className="h-8 w-auto sm:h-10"
-                  src="https://tailwindui.com/img/logos/mark.svg?from-color=teal&from-shade=200&to-color=cyan&to-shade=400&toShade=400"
+                  className="h-10 w-auto sm:h-10"
+                  src="/vendettadaoLogo.png"
                   alt=""
                 />
               </a>
+              {/* Button */}
               <div className="-mr-2 flex items-center md:hidden">
-                <Popover.Button className="focus-ring-inset inline-flex items-center justify-center rounded-md bg-gray-900 p-2 text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-white">
+                <Popover.Button className="focus-ring-inset
+                    inline-flex
+                    items-center
+                    justify-center
+                    rounded-md
+                    bg-gray-900
+                    p-2
+                    text-gray-400
+                    hover:bg-gray-800
+                    focus:outline-none
+                    focus:ring-2
+                    focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
@@ -89,25 +96,34 @@ const Navbar = () => {
             </div>
             <div className="hidden space-x-8 md:ml-10 md:flex">
               {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-base font-medium text-white hover:text-gray-300"
-                >
-                  {item.name}
-                </a>
+                <Link href={item.href}>
+                  <a
+                    key={item.name}
+                    className="text-base font-medium text-white hover:text-gray-300"
+                  >
+                    {item.name}
+                  </a>
+                </Link>
               ))}
             </div>
           </div>
           <div className="hidden md:flex md:items-center md:space-x-6">
-            <a href="#" className="text-base font-medium text-white hover:text-gray-300">
-              Log in
-            </a>
             <a
               href="#"
-              className="inline-flex items-center rounded-md border border-transparent bg-gray-600 px-4 py-2 text-base font-medium text-white hover:bg-gray-700"
+              className="inline-flex
+                  items-center
+                  rounded-md
+                  border
+                  border-transparent
+                  bg-orange-700
+                  px-4
+                  py-2
+                  text-base
+                  font-medium
+                  text-gray-100
+                  hover:bg-orange-800"
             >
-              Start free trial
+              Connect Wallet
             </a>
           </div>
         </nav>
@@ -123,29 +139,46 @@ const Navbar = () => {
         leaveTo="opacity-0 scale-95"
       >
         <Popover.Panel focus className="absolute inset-x-0 top-0 origin-top transform p-2 transition md:hidden">
-          <div className="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
+          <div className="overflow-hidden
+          rounded-lg
+          bg-gray-900
+          shadow-md
+          ring-1
+          ring-black
+          ring-opacity-5">
             <div className="flex items-center justify-between px-5 pt-4">
               <div>
                 <img
                   className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?from-color=teal&from-shade=500&to-color=cyan&to-shade=600&toShade=600"
+                  src="/vendettadaoLogo.png"
                   alt=""
                 />
               </div>
               <div className="-mr-2">
-                <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
+                <Popover.Button className="inline-flex
+                items-center
+                justify-center
+                rounded-md
+                bg-gray-700
+                p-2
+                text-white
+                hover:bg-gray-800
+                focus:outline-none
+                focus:ring-2
+                focus:ring-inset
+                focus:ring-cyan-600">
                   <span className="sr-only">Close menu</span>
                   <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
               </div>
             </div>
-            <div className="pt-5 pb-6">
+            <div className="pt-5 pb-6 bg-gray-900">
               <div className="space-y-1 px-2">
                 {navigation.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-100 hover:bg-gray-800"
                   >
                     {item.name}
                   </a>
@@ -154,18 +187,20 @@ const Navbar = () => {
               <div className="mt-6 px-5">
                 <a
                   href="#"
-                  className="block w-full rounded-md bg-gradient-to-r from-teal-500 to-cyan-600 py-3 px-4 text-center font-medium text-white shadow hover:from-teal-600 hover:to-cyan-700"
+                  className="block
+                  w-full
+                  rounded-md
+                  bg-orange-700
+                  py-3
+                  px-4
+                  text-center
+                  font-medium
+                  text-gray-100
+                  shadow
+                  hover:bg-orange-800"
                 >
                   Start free trial
                 </a>
-              </div>
-              <div className="mt-6 px-5">
-                <p className="text-center text-base font-medium text-gray-500">
-                  Existing customer?{' '}
-                  <a href="#" className="text-gray-900 hover:underline">
-                    Login
-                  </a>
-                </p>
               </div>
             </div>
           </div>
