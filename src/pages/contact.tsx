@@ -11,38 +11,25 @@ export default function Home() {
   return (
     <>
       <div className="relative min-h-screen">
-        <video className="relative min-w-full min-h-full object-cover" autoPlay playsInline muted loop>
-          <source src='/video.mp4' type="video/mp4" />
+        {/* <video
+          className="absolute top-0 min-w-full h-96 object-center object-cover border border-b border-accent-500"
+          autoPlay
+          playsInline
+          muted
+          loop
+        >
+          <source src="/video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
+        <img src="/learn_more_image.jpg" alt="learn more" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent "></div>
         <div className="absolute inset-0 bg-black/80"></div>
         <div className="absolute inset-0 flex items-center justify-center flex-col">
-          {/* <h1 className="text-6xl text-white font-semibold">VENDETTA DAO</h1>
-        <h3 className="text-3xl text-white">learn more</h3> */}
-          <div className="relative">
+          <div className="relative bg-neutral-900/40 backdrop-blur-lg border border-neutral-800 rounded-lg ">
             <ContactForm />
           </div>
-          
         </div>
       </div>
-
-      {/* <SplitCard
-        className='text-white'
-        left={
-          <div className="flex flex-col justify-center items-center">
-            hello
-          </div>
-        }
-        right={
-          <div className="flex flex-col justify-center items-center">
-            hello
-          </div>
-        }
-      /> */}
-
-      <main>
-        
-      </main>
     </>
   );
 }

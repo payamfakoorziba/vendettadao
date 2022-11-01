@@ -23,7 +23,7 @@ export default function ContactForm() {
   const [agreed, setAgreed] = useState(false)
 
   return (
-    <div className="overflow-hidden py-16 px-4 sm:px-6 lg:px-8 lg:py-24">
+    <div className="overflow-hidden py-16 px-4 sm:px-6 lg:px-8 lg:py-12">
       <div className="relative mx-auto max-w-xl">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">Contact sales</h2>
