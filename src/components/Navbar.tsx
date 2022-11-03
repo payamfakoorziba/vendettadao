@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
 import Link from "next/link";
 import { Popover, Transition } from "@headlessui/react";
 import {
@@ -13,6 +13,28 @@ interface NavItem {
   href?: string;
   items?: NavItem[];
 }
+
+// useActiveElement hook
+const useActiveElement = () => {
+  const [activeElement, setActiveElement] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    // listen to any focus event
+
+    const onFocus = (event: FocusEvent) => {
+      setActiveElement(event.target as HTMLElement);
+    }
+
+    document.addEventListener("focus", onFocus, true);
+
+    return () => {
+      document.removeEventListener("focus", onFocus, true);
+    }
+  }, []);
+
+  return activeElement;
+}
+  
 
 const navigation: NavItem[] = [
   { name: "Home", href: "/" },
@@ -56,6 +78,10 @@ const navigation: NavItem[] = [
 ];
 
 const NavElement = ({ item }: { item: NavItem }) => {
+  const activeElement = useActiveElement();
+
+  console.debug(activeElement)
+
   if (item.href) {
     const isExternal = item.href.startsWith("http");
     return (
@@ -70,7 +96,9 @@ const NavElement = ({ item }: { item: NavItem }) => {
         focus:text-accent-200
         flex
         whitespace-nowrap
-        items-center">
+        items-center"
+        {...(isExternal && { target: "_blank" })}
+        >
           {item.name}
           {isExternal && <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-1.5 opacity-80 flex-shrink-0" />}
         </a>
@@ -81,7 +109,10 @@ const NavElement = ({ item }: { item: NavItem }) => {
   if (item.items) {
     return (
       <div className="relative group">
-        <button className="text-base font-medium text-white hover:text-neutral-300 flex items-center">
+        <button
+          className="text-base font-medium text-white hover:text-neutral-300 flex items-center"
+          data-nav={item.name}
+        >
           {item.name}
           <ChevronDownIcon className="w-3.5 h-3.5 flex-shrink-0 ml-1 transition-all ease-in-out duration-200 group-hover:rotate-180 group-focus-within:rotate-180 " />
         </button>
@@ -103,49 +134,6 @@ const NavElement = ({ item }: { item: NavItem }) => {
 
 const Navbar = () => {
   return (
-    // <nav className="bg-neutral-900 p-6 sticky top-0 z-20 inset-x-0">
-    //   <div className="flex items-center justify-between flex-wrap  max-w-screen-xl mx-auto">
-    //     <div className="flex items-center flex-shrink-0 text-white mr-6">
-    //       <img className="h-10" src="/vendettadaoLogo.png" alt="logo" />
-    //       <span className="font-semibold text-xl tracking-tight">Vendetta DAO</span>
-    //     </div>
-    //     Menu button
-    //     <div className="block lg:hidden">
-    //       <button className="flex items-center px-3 py-2 border rounded text-neutral-500 border-neutral-600 hover:text-white hover:border-white">
-    //         <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-    //       </button>
-    //     </div>
-    //     <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-    //       <div className="text-base lg:flex-grow">
-    //         <Link href="/">
-    //           <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-neutral-200 hover:text-white mr-8">
-    //             Home
-    //           </a>
-    //         </Link>
-    //         <a className="block mt-4 lg:inline-block lg:mt-0 text-neutral-200 hover:text-white mr-8">
-    //           DEX
-    //         </a>
-    //         <a className="block mt-4 lg:inline-block lg:mt-0 text-neutral-200 hover:text-white mr-8" href="https://chalkrivergeneralstore.nftify.network/">
-    //           Store
-    //         </a>
-    //         <a className="block mt-4 lg:inline-block lg:mt-0 text-neutral-200 hover:text-white mr-8" href="">
-    //           Docs
-    //         </a>
-    //         <Link href="/stinky">
-    //           <a className="block mt-4 lg:inline-block lg:mt-0 text-neutral-200 hover:text-white mr-8">
-    //             Social Media
-    //           </a>
-    //         </Link>
-    //         <Link href="/contact">
-    //           <a className="block mt-4 lg:inline-block lg:mt-0 text-neutral-200 hover:text-white mr-8">
-    //             Contact
-    //           </a>
-    //         </Link>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </nav>
-
     <Popover as="header" className=" z-20 sticky top-0">
       <div className="bg-neutral-900 p-4">
         <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
@@ -153,7 +141,7 @@ const Navbar = () => {
             <div className="flex w-full items-center justify-between 2md:w-auto">
               {/* Logo */}
               <a href="#">
-                <span className="sr-only">Your Company</span>
+                <span className="sr-only">Vendettadao</span>
                 <img className="h-10 w-auto sm:h-10" src="/vendettadaoLogo.png" alt="" />
               </a>
               {/* Button */}

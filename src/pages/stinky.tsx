@@ -214,7 +214,7 @@ export default function Example() {
                 <div className="flex w-full items-center justify-between md:w-auto">
                   {/* Logo */}
                   <a href="#">
-                    <span className="sr-only">Your Company</span>
+                    <span className="sr-only">Vendettadao</span>
                     <img
                       className="h-8 w-auto sm:h-10"
                       src="https://tailwindui.com/img/logos/mark.svg?from-color=teal&from-shade=200&to-color=cyan&to-shade=400&toShade=400"
@@ -676,7 +676,7 @@ export default function Example() {
             </div>
             <div className="mt-12 border-t border-gray-200 py-8">
               <p className="text-base text-gray-400 xl:text-center">
-                &copy; 2020 Your Company, Inc. All rights reserved.
+                &copy; 2020 Vendettadao, Inc. All rights reserved.
               </p>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { SplitCard } from './SplitCard'
+
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -32,9 +32,9 @@ export function Example() {
                   <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
                     <div className="flex w-full items-center justify-between md:w-auto">
                       <a href="#">
-                        <span className="sr-only">Your Company</span>
+                        <span className="sr-only">Vendettadao</span>
                         <img
-                          alt="Your Company"
+                          alt="Vendettadao"
                           className="h-8 w-auto sm:h-10"
                           src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                         />

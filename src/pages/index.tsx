@@ -2,8 +2,10 @@ import { Hero } from "components/hero";
 import Navbar from "components/Navbar";
 import { SplitCard } from "components/SplitCard";
 import { Stats } from "components/Stats";
+import { useState } from "react";
 
 export default function Home() {
+  const [showInfo, setShowInfo] = useState(false);
   return (
     <>
       <Hero>
@@ -24,7 +26,8 @@ export default function Home() {
         </h3>
         <a
           href="#"
-          className="flex
+          className="
+          flex
           rounded-md
           border
           border-transparent
@@ -63,15 +66,7 @@ export default function Home() {
           >
             <div>
               <h2 className="text-white text-3xl font-semibold mb-4">Overview</h2>
-              <div className="text-neutral-300 max-w-lg">
-                <p>
-                  The <span className="text-orange-400">VendettaDAO</span> will provide governance
-                  to the <span className="text-orange-400">Vendetta Ecosystem</span>. By harnessing
-                  the power of the DAO, we can best position the project to serve the best interests
-                  of the <span className="text-orange-400">community</span> as whole. The governance
-                  provided can steer the project in new directions to tackle new challenges.
-                </p>
-                <br />
+              <div className="text-neutral-300 max-w-lg space-y-4">
                 <ul className="text-left list-disc">
                   <li>Manage Guild Treasury</li>
                   <li>Select new projects</li>
@@ -79,14 +74,37 @@ export default function Home() {
                   <li>Govern Vendetta Token</li>
                   <li>Vote on community issues</li>
                 </ul>
-                <br />
-                <p>
-                  Starting an organization with someone that involves funding and money requires
-                  much trust in the people you’re working with. But it’s hard to trust someone
-                  you’ve only ever interacted with on the internet. With DAOs, you don’t need to
-                  trust anyone else in the group, just the DAO’s code, which is 100% transparent and
-                  verifiable by anyone.
-                </p>
+                {/* <button
+                  onClick={() => setShowInfo(!showInfo)}
+                  className="px-4 py-1 5 rounded-full bg-orange-500 text-white">
+                  {showInfo ? 'Hide Info' : 'Learn More'}
+                </button> */}
+                {showInfo ? (
+                  <>
+                    <p>
+                      The <span className="text-orange-400">VendettaDAO</span> will provide
+                      governance to the <span className="text-orange-400">Vendetta Ecosystem</span>.
+                      By harnessing the power of the DAO, we can best position the project to serve
+                      the best interests of the <span className="text-orange-400">community</span>{" "}
+                      as whole. The governance provided can steer the project in new directions to
+                      tackle new challenges.
+                    </p>
+                    <p>
+                      Starting an organization with someone that involves funding and money requires
+                      much trust in the people you’re working with. But it’s hard to trust someone
+                      you’ve only ever interacted with on the internet. With DAOs, you don’t need to
+                      trust anyone else in the group, just the DAO’s code, which is 100% transparent
+                      and verifiable by anyone.
+                    </p>
+                  </>
+                ) : (
+                  <button
+                    onClick={() => setShowInfo(true)}
+                    className="px-4 py-1 5 rounded-full bg-orange-500 text-white"
+                  >
+                    Learn More
+                  </button>
+                )}
               </div>
             </div>
             <img
@@ -135,14 +153,16 @@ export default function Home() {
                   <li>Game rewards</li>
                 </ul>
                 <br />
-                <p>
-                  We continually work to improve existing game or build new games to further enhance
-                  the token’s utility. Ensuring that $VDT has the ability to grow while performing
-                  the role of an in-game token is a core focus of the Vendetta team. We know the
-                  ramifications of a token build on unsound principals. The tokenomics of the $VDT
-                  token were rigorously determined to ensure an optimal distribution. Making sure we
-                  have enough tokens in the right hans is key to our success.
-                </p>
+                {showInfo && (
+                  <p>
+                    We continually work to improve existing game or build new games to further
+                    enhance the token’s utility. Ensuring that $VDT has the ability to grow while
+                    performing the role of an in-game token is a core focus of the Vendetta team. We
+                    know the ramifications of a token build on unsound principals. The tokenomics of
+                    the $VDT token were rigorously determined to ensure an optimal distribution.
+                    Making sure we have enough tokens in the right hans is key to our success.
+                  </p>
+                )}
               </div>
             </div>
           </div>
