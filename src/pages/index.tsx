@@ -2,10 +2,24 @@ import { Hero } from "components/hero";
 import Navbar from "components/Navbar";
 import { SplitCard } from "components/SplitCard";
 import { Stats } from "components/Stats";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Home() {
   const [showInfo, setShowInfo] = useState(false);
+  const overviewRef = useRef<HTMLDivElement>(null);
+
+  const onCTAClick = () => {
+    if (overviewRef.current) {
+      // overviewRef.current.scrollIntoView({
+      //   behavior: "smooth",
+      // });
+      window.scrollTo({
+        top: overviewRef.current.offsetTop - 80,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <>
       <Hero>
@@ -24,8 +38,7 @@ export default function Home() {
         <h3 className="text-xl md:text-3xl text-neutral-200 font-medium">
           An ecosystem with a score to settle
         </h3>
-        <a
-          href="#"
+        <button
           className="
           flex
           rounded-md
@@ -41,15 +54,17 @@ export default function Home() {
           items-center
         hover:bg-orange-800
           mt-5"
+          onClick={onCTAClick}
         >
           Learn More
-        </a>
+        </button>
       </Hero>
 
       <div
         className="border-t
       border-accent-800
       bg-neutral-900"
+        ref={overviewRef}
       >
         <main>
           {/* Overview */}
