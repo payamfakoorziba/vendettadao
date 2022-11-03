@@ -10,7 +10,8 @@ export default function Home() {
         <h1
           className="font-serif
         text-center
-        text-6xl
+        text-4xl
+        md:text-6xl
         lg:text-8xl
         text-accent-300
         tracking-tight
@@ -18,29 +19,47 @@ export default function Home() {
         >
           VENDETTA DAO
         </h1>
-        <h3 className="text-2xl md:text-3xl text-neutral-200 font-medium">
+        <h3 className="text-xl md:text-3xl text-neutral-200 font-medium">
           An ecosystem with a score to settle
         </h3>
+        <a
+          href="#"
+          className="flex
+          rounded-md
+          border
+          border-transparent
+         bg-orange-700
+          px-4
+          py-2
+          text-sm
+          md:text-xl
+          font-medium
+          text-neutral-100
+          items-center
+        hover:bg-orange-800
+          mt-5"
+        >
+          Learn More
+        </a>
       </Hero>
 
       <div
         className="border-t
       border-accent-800
-      bg-neutral-900/50"
+      bg-neutral-900"
       >
         <main>
           {/* Overview */}
           <div
             className="
-        container
-        max-w-screen-xl
-        mx-auto
-        relative
-        py-12
-        grid 
-        md:grid-cols-2
-        gap-8
-        "
+            container
+            max-w-screen-xl
+            mx-auto
+            relative
+            py-12
+            grid 
+            md:grid-cols-2
+            gap-8"
           >
             <div>
               <h2 className="text-white text-3xl font-semibold mb-4">Overview</h2>
@@ -129,7 +148,7 @@ export default function Home() {
           </div>
 
           {/* Partners  */}
-          <div className="container py-6 max-w-screen-xl">
+          <div className="container py-6 max-w-screen-xl bg-neutral-900">
             <h2 className="text-white text-3xl font-semibold mb-4 text-center">Partners</h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-4 justify-items-center gap-7">
               <img src="/white_logo.png" alt="logo" />

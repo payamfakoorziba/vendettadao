@@ -16,7 +16,7 @@ export function Stats() {
           <div className="absolute inset-0 h-1/2 bg-neutral-900" />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-4xl">
-              <dl className="rounded-lg bg-neutral-600 border border-neutral-500 shadow-lg sm:grid sm:grid-cols-3">
+              <dl className="rounded-lg bg-neutral-800 border border-neutral-600 shadow-lg sm:grid sm:grid-cols-3">
                 <div className="flex flex-col border-b border-neutral-500/50 p-6 text-center items-center justify-center sm:border-0 sm:border-r">
                   <dt className="order-2 mt-2 text-lg font-medium leading-6 text-gray-300">Games Built</dt>
                   <dd className="order-1 text-5xl font-bold tracking-tight text-white">7</dd>

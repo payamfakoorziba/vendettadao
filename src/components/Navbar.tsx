@@ -18,7 +18,23 @@ const navigation: NavItem[] = [
   { name: "Home", href: "/" },
   { name: "DEX", href: "#" },
   { name: "Store", href: "#" },
-  { name: "Docs", href: "#" },
+  {
+    name: "Docs",
+    items: [
+      {
+        name: "Litepaper",
+        href: "https://mcswyzzle-crypto-freedom.gitbook.io/vendettadao-lite-paper.2/general-overview/vendetta-ecosystem"
+      },
+      {
+        name: "NFT Deck",
+        href: "https://vendettadao.com/wp-content/uploads/2022/08/NFT-DECK.pdf"
+      },
+      {
+        name: "Investment Proposal",
+        href: "https://vendettadao.com/wp-content/uploads/2022/07/Vendetta-Investment-Deck-1-1.pdf"
+      },
+    ]
+  },
   {
     name: "Social Media",
     items: [
@@ -44,7 +60,17 @@ const NavElement = ({ item }: { item: NavItem }) => {
     const isExternal = item.href.startsWith("http");
     return (
       <Link href={item.href}>
-        <a className="text-base font-medium text-white hover:text-neutral-300 focus:outline-none focus:underline underline-offset-2 focus:text-accent-200 flex items-center">
+        <a className="text-base
+        font-medium
+        text-white
+        hover:text-neutral-300
+        focus:outline-none
+        focus:underline
+        underline-offset-2
+        focus:text-accent-200
+        flex
+        whitespace-nowrap
+        items-center">
           {item.name}
           {isExternal && <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-1.5 opacity-80 flex-shrink-0" />}
         </a>
@@ -124,14 +150,14 @@ const Navbar = () => {
       <div className="bg-neutral-900 p-4">
         <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
           <div className="flex flex-1 items-center ">
-            <div className="flex w-full items-center justify-between md:w-auto">
+            <div className="flex w-full items-center justify-between 2md:w-auto">
               {/* Logo */}
               <a href="#">
                 <span className="sr-only">Your Company</span>
                 <img className="h-10 w-auto sm:h-10" src="/vendettadaoLogo.png" alt="" />
               </a>
               {/* Button */}
-              <div className="-mr-2 flex items-center md:hidden">
+              <div className="-mr-2 flex items-center 2md:hidden">
                 <Popover.Button
                   className="focus-ring-inset
                     inline-flex
@@ -144,20 +170,20 @@ const Navbar = () => {
                     hover:bg-neutral-800
                     focus:outline-none
                     focus:ring-2
-                    focus:ring-white"
+                    focus:ring-orange-700"
                 >
                   <span className="sr-only">Open main menu</span>
                   <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
               </div>
             </div>
-            <div className="hidden space-x-7 xl:space-x-8 md:ml-10 md:flex">
+            <div className="hidden space-x-7 xl:space-x-8 2md:ml-10 2md:flex">
               {navigation.map((item, i) => (
                 <NavElement key={i} item={item} />
               ))}
             </div>
           </div>
-          <div className="hidden md:flex md:items-center md:space-x-6">
+          <div className="hidden 2md:flex 2md:items-center 2md:space-x-6">
             <a
               href="#"
               className="inline-flex
@@ -190,7 +216,7 @@ const Navbar = () => {
       >
         <Popover.Panel
           focus
-          className="absolute inset-x-0 top-0 origin-top transform p-2 transition md:hidden"
+          className="absolute inset-x-0 top-0 origin-top transform p-2 transition 2md:hidden"
         >
           <div
             className="overflow-hidden
@@ -218,7 +244,7 @@ const Navbar = () => {
                 focus:outline-none
                 focus:ring-2
                 focus:ring-inset
-                focus:ring-cyan-600"
+                focus:ring-orange-700"
                 >
                   <span className="sr-only">Close menu</span>
                   <XMarkIcon className="h-6 w-6" aria-hidden="true" />

@@ -41,8 +41,10 @@ module.exports = {
           "900": "rgba(164 48 0 / <alpha-value>)"
 
         }
+      },
+      screens: {
+        "2md": "866px",
       }
-
     },
   },
   variants: {},
