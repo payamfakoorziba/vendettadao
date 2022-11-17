@@ -4,6 +4,48 @@ import { SplitCard } from "components/SplitCard";
 import { Stats } from "components/Stats";
 import { useRef, useState } from "react";
 
+// Make this a json object
+/* 
+AlphaBlockz.png
+BSCLaunch.png
+Coorest.png
+Cyber K.png
+Fables _of_Fyra.png
+filenames.txt
+GOB.png
+Heroes_Land.jpg
+Metopia.png
+OGVentures.png
+Ookeenga.png
+Owl Protocal.png
+Polygon_Studios.svg
+Spores_Network.svg
+Swallow.svg
+TRUSST.png
+V2B.jpg
+VulcanVerse.jpg
+*/
+
+const logos = [
+  "/AlphaBlockz.png",
+  "/BSCLaunch.png",
+  "/Coorest.png",
+  "/Cyber K.png",
+  "/Fables _of_Fyra.png",
+  "/GOB.png",
+  "/Heroes_Land.jpg",
+  "/Metopia.png",
+  "/OGVentures.png",
+  "/Ookeenga.png",
+  "/Owl Protocal.png",
+  "/Polygon_Studios.svg",
+  "/Spores_Network.svg",
+  "/Swallow.svg",
+  "/TRUSST.png",
+  "/V2B.jpg",
+  "/VulcanVerse.jpg",
+];
+
 export default function Home() {
   const [showInfo, setShowInfo] = useState(false);
   const overviewRef = useRef<HTMLDivElement>(null);
@@ -328,14 +370,9 @@ export default function Home() {
           <div className="container max-w-screen-xl py-6 bg-neutral-900">
             <h2 className="mb-4 text-3xl font-semibold text-center text-white">Partners</h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-4 justify-items-center gap-7">
-              <img src="/white_logo.png" alt="logo" />
-              <img src="/white_logo.png" alt="logo" />
-              <img src="/white_logo.png" alt="logo" />
-              <img src="/white_logo.png" alt="logo" />
-              <img src="/white_logo.png" alt="logo" />
-              <img src="/white_logo.png" alt="logo" />
-              <img src="/white_logo.png" alt="logo" />
-              <img src="/white_logo.png" alt="logo" />
+              {logos.map((logo) => (
+                <img src={logo} alt="logo" className="w-32 h-32" />
+              ))}
             </div>
           </div>
         </main>
