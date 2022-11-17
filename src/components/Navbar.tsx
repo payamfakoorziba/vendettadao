@@ -39,7 +39,20 @@ const useActiveElement = () => {
 const navigation: NavItem[] = [
   { name: "Home", href: "/" },
   { name: "DEX", href: "#" },
-  { name: "Store", href: "#" },
+  { name: "Store", href: "https://chalkrivergeneralstore.nftify.network/" },
+  {
+    name: "Store",
+    items: [
+      {
+        name: "NFT marketplace",
+        href: "https://mcswyzzle-crypto-freedom.gitbook.io/vendettadao-lite-paper.2/general-overview/vendetta-ecosystem"
+      },
+      {
+        name: "Merchandise",
+        href: "https://vendettadao.com/wp-content/uploads/2022/08/NFT-DECK.pdf"
+      },
+    ]
+  },
   {
     name: "Docs",
     items: [
@@ -86,21 +99,11 @@ const NavElement = ({ item }: { item: NavItem }) => {
     const isExternal = item.href.startsWith("http");
     return (
       <Link href={item.href}>
-        <a className="text-base
-        font-medium
-        text-white
-        hover:text-neutral-300
-        focus:outline-none
-        focus:underline
-        underline-offset-2
-        focus:text-accent-200
-        flex
-        whitespace-nowrap
-        items-center"
+        <a className="flex items-center text-base font-medium text-white hover:text-neutral-300 focus:outline-none focus:underline underline-offset-2 focus:text-accent-200 whitespace-nowrap"
         {...(isExternal && { target: "_blank" })}
         >
           {item.name}
-          {isExternal && <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-1.5 opacity-80 flex-shrink-0" />}
+          {/* {isExternal && <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-1.5 opacity-80 flex-shrink-0" />} */}
         </a>
       </Link>
     );
@@ -110,16 +113,16 @@ const NavElement = ({ item }: { item: NavItem }) => {
     return (
       <div className="relative group">
         <button
-          className="text-base font-medium text-white hover:text-neutral-300 flex items-center"
+          className="flex items-center text-base font-medium text-white hover:text-neutral-300"
           data-nav={item.name}
         >
           {item.name}
           <ChevronDownIcon className="w-3.5 h-3.5 flex-shrink-0 ml-1 transition-all ease-in-out duration-200 group-hover:rotate-180 group-focus-within:rotate-180 " />
         </button>
-        <div className="absolute top-full pt-1 hidden group-hover:block group-focus-within:block">
-          <div className="bg-neutral-900 border rounded border-neutral-700 p-1">
+        <div className="absolute hidden pt-1 top-full group-hover:block group-focus-within:block">
+          <div className="p-1 border rounded bg-neutral-900 border-neutral-700">
             {item.items.map((subItem, i) => (
-              <div key={i} className="px-3 py-1 rounded hover:bg-black/50 pr-6">
+              <div key={i} className="px-3 py-1 pr-6 rounded hover:bg-black/50">
                 <NavElement item={subItem} />
               </div>
             ))}
@@ -134,34 +137,23 @@ const NavElement = ({ item }: { item: NavItem }) => {
 
 const Navbar = () => {
   return (
-    <Popover as="header" className=" z-20 sticky top-0">
-      <div className="bg-neutral-900 p-4">
-        <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6">
-          <div className="flex flex-1 items-center ">
-            <div className="flex w-full items-center justify-between 2md:w-auto">
+    <Popover as="header" className="sticky top-0 z-20 ">
+      <div className="p-4 bg-neutral-900">
+        <nav className="relative flex items-center justify-between px-4 mx-auto max-w-7xl sm:px-6">
+          <div className="flex items-center flex-1 ">
+            <div className="flex items-center justify-between w-full 2md:w-auto">
               {/* Logo */}
               <a href="#">
                 <span className="sr-only">Vendettadao</span>
-                <img className="h-10 w-auto sm:h-10" src="/vendettadaoLogo.png" alt="" />
+                <img className="w-auto h-10 sm:h-10" src="/vendettadaoLogo.png" alt="" />
               </a>
               {/* Button */}
-              <div className="-mr-2 flex items-center 2md:hidden">
+              <div className="flex items-center -mr-2 2md:hidden">
                 <Popover.Button
-                  className="focus-ring-inset
-                    inline-flex
-                    items-center
-                    justify-center
-                    rounded-md
-                    bg-neutral-900
-                    p-2
-                    text-neutral-400
-                    hover:bg-neutral-800
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-orange-700"
+                  className="inline-flex items-center justify-center p-2 rounded-md focus-ring-inset bg-neutral-900 text-neutral-400 hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-orange-700"
                 >
                   <span className="sr-only">Open main menu</span>
-                  <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                  <Bars3Icon className="w-6 h-6" aria-hidden="true" />
                 </Popover.Button>
               </div>
             </div>
@@ -174,18 +166,7 @@ const Navbar = () => {
           <div className="hidden 2md:flex 2md:items-center 2md:space-x-6">
             <a
               href="#"
-              className="inline-flex
-                  items-center
-                  rounded-md
-                  border
-                  border-transparent
-                  bg-orange-700
-                  px-4
-                  py-2
-                  text-base
-                  font-medium
-                  text-neutral-100
-                  hover:bg-orange-800"
+              className="inline-flex items-center px-4 py-2 text-base font-medium bg-orange-700 border border-transparent rounded-md text-neutral-100 hover:bg-orange-800"
             >
               Connect Wallet
             </a>
@@ -204,67 +185,40 @@ const Navbar = () => {
       >
         <Popover.Panel
           focus
-          className="absolute inset-x-0 top-0 origin-top transform p-2 transition 2md:hidden"
+          className="absolute inset-x-0 top-0 p-2 transition origin-top transform 2md:hidden"
         >
           <div
-            className="overflow-hidden
-          rounded-lg
-          bg-neutral-900
-          shadow-md
-          ring-1
-          ring-black
-          ring-opacity-5"
+            className="overflow-hidden rounded-lg shadow-md bg-neutral-900 ring-1 ring-black ring-opacity-5"
           >
             <div className="flex items-center justify-between px-5 pt-4">
               <div>
-                <img className="h-8 w-auto" src="/vendettadaoLogo.png" alt="" />
+                <img className="w-auto h-8" src="/vendettadaoLogo.png" alt="" />
               </div>
               <div className="-mr-2">
                 <Popover.Button
-                  className="inline-flex
-                items-center
-                justify-center
-                rounded-md
-                bg-neutral-700
-                p-2
-                text-white
-                hover:bg-neutral-800
-                focus:outline-none
-                focus:ring-2
-                focus:ring-inset
-                focus:ring-orange-700"
+                  className="inline-flex items-center justify-center p-2 text-white rounded-md bg-neutral-700 hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-700"
                 >
                   <span className="sr-only">Close menu</span>
-                  <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                  <XMarkIcon className="w-6 h-6" aria-hidden="true" />
                 </Popover.Button>
               </div>
             </div>
             <div className="pt-5 pb-6 bg-neutral-900">
-              <div className="space-y-1 px-2">
+              <div className="px-2 space-y-1">
                 {navigation.map((item, i) => (
                   <a
                     key={i}
                     href={item.href}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-neutral-100 hover:bg-neutral-800"
+                    className="block px-3 py-2 text-base font-medium rounded-md text-neutral-100 hover:bg-neutral-800"
                   >
                     {item.name}
                   </a>
                 ))}
               </div>
-              <div className="mt-6 px-5">
+              <div className="px-5 mt-6">
                 <a
                   href="#"
-                  className="block
-                  w-full
-                  rounded-md
-                  bg-orange-700
-                  py-3
-                  px-4
-                  text-center
-                  font-medium
-                  text-neutral-100
-                  shadow
-                  hover:bg-orange-800"
+                  className="block w-full px-4 py-3 font-medium text-center bg-orange-700 rounded-md shadow text-neutral-100 hover:bg-orange-800"
                 >
                   Start free trial
                 </a>

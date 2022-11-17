@@ -1,8 +1,8 @@
 export function Stats() {
   return (
-    <div className="bg-neutral-900 pt-12 sm:pt-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
+    <div className="pt-12 bg-neutral-900 sm:pt-16">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Lorem ipsum dolor sit amet.
           </h2>
@@ -11,21 +11,21 @@ export function Stats() {
           </p>
         </div>
       </div>
-      <div className="mt-10 bg-neutral-900 pb-12 sm:pb-16">
+      <div className="pb-12 mt-10 bg-neutral-900 sm:pb-16">
         <div className="relative">
           <div className="absolute inset-0 h-1/2 bg-neutral-900" />
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-4xl">
-              <dl className="rounded-lg bg-neutral-800 border border-neutral-600 shadow-lg sm:grid sm:grid-cols-3">
-                <div className="flex flex-col border-b border-neutral-500/50 p-6 text-center items-center justify-center sm:border-0 sm:border-r">
-                  <dt className="order-2 mt-2 text-lg font-medium leading-6 text-gray-300">Games Built</dt>
+          <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <dl className="border rounded-lg shadow-lg bg-neutral-800 border-neutral-600 sm:grid sm:grid-cols-3">
+                <div className="flex flex-col items-center justify-center p-6 text-center border-b border-neutral-500/50 sm:border-0 sm:border-r">
+                  <dt className="order-2 mt-2 text-lg font-medium leading-6 text-gray-300">Games</dt>
                   <dd className="order-1 text-5xl font-bold tracking-tight text-white">7</dd>
                 </div>
-                <div className="flex flex-col border-t border-b border-neutral-500/50 p-6 text-center items-center justify-center sm:border-0 sm:border-r">
+                <div className="flex flex-col items-center justify-center p-6 text-center border-t border-b border-neutral-500/50 sm:border-0 sm:border-r">
                   <dt className="order-2 mt-2 text-lg font-medium leading-6 text-gray-300">Members</dt>
-                  <dd className="order-1 text-5xl font-bold tracking-tight text-white">800+</dd>
+                  <dd className="order-1 text-5xl font-bold tracking-tight text-white">10,000 +</dd>
                 </div>
-                <div className="flex flex-col border-t border-neutral-500/50 p-6 text-center items-center justify-center sm:border-0 ">
+                <div className="flex flex-col items-center justify-center p-6 text-center border-t border-neutral-500/50 sm:border-0 ">
                   <dt className="order-2 mt-2 text-lg font-medium leading-6 text-gray-300">Token Supply</dt>
                   <dd className="order-1 text-5xl font-bold tracking-tight text-white">100 million</dd>
                 </div>
