@@ -24,6 +24,7 @@ Swallow.svg
 TRUSST.png
 V2B.jpg
 VulcanVerse.jpg
+Elysium.png
 */
 
 const logos = [
@@ -44,6 +45,7 @@ const logos = [
   "/TRUSST.png",
   "/V2B.jpg",
   "/VulcanVerse.jpg",
+  "/Elysium.png",
 ];
 
 export default function Home() {
@@ -369,9 +371,9 @@ export default function Home() {
           {/* Partners  */}
           <div className="container max-w-screen-xl py-6 bg-neutral-900">
             <h2 className="mb-4 text-3xl font-semibold text-center text-white">Partners</h2>
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 justify-items-center gap-7">
+            <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-4">
               {logos.map((logo) => (
-                <img src={logo} alt="logo" className="w-32 h-32" />
+                <img src={logo} alt="logo" className="" />
               ))}
             </div>
           </div>
