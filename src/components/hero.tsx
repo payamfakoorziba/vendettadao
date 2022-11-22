@@ -4,7 +4,7 @@ export const Hero = ({ children }: { children: React.ReactNode }) => (
   <>
     <div className="bg-red-500 relative">
       <video className="relative min-w-full min-h-full object-cover" autoPlay playsInline muted loop>
-        <source src='/video.mp4' type="video/mp4" />
+        <source src='/video.webm' type="video/webm" />
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-black/80"></div>

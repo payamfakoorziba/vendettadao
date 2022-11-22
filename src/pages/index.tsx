@@ -4,48 +4,26 @@ import { SplitCard } from "components/SplitCard";
 import { Stats } from "components/Stats";
 import { useRef, useState } from "react";
 
-// Make this a json object
-/* 
-AlphaBlockz.png
-BSCLaunch.png
-Coorest.png
-Cyber K.png
-Fables _of_Fyra.png
-filenames.txt
-GOB.png
-Heroes_Land.jpg
-Metopia.png
-OGVentures.png
-Ookeenga.png
-Owl Protocal.png
-Polygon_Studios.svg
-Spores_Network.svg
-Swallow.svg
-TRUSST.png
-V2B.jpg
-VulcanVerse.jpg
-Elysium.png
-*/
 
 const logos = [
-  "/AlphaBlockz.png",
-  "/BSCLaunch.png",
-  "/Coorest.png",
-  "/Cyber K.png",
-  "/Fables _of_Fyra.png",
-  "/GOB.png",
-  "/Heroes_Land.jpg",
-  "/Metopia.png",
-  "/OGVentures.png",
-  "/Ookeenga.png",
-  "/Owl Protocal.png",
-  "/Polygon_Studios.svg",
-  "/Spores_Network.svg",
-  "/Swallow.svg",
-  "/TRUSST.png",
-  "/V2B.jpg",
-  "/VulcanVerse.jpg",
-  "/Elysium.png",
+  { url: "/AlphaBlockz.png", className: "w-44" },
+  { url: "/BSCLaunch.png", className: "w-44" },
+  { url: "/Coorest.png", className: "w-44" },
+  { url: "/Cyber K.png", className: "w-44" },
+  { url: "/Fables _of_Fyra.png", className: "w-44" },
+  { url: "/GOB.png", className: "w-44" },
+  { url: "/Heroes_Land.jpg", className: "w-44" },
+  { url: "/Metopia.png", className: "w-44" },
+  { url: "/OGVentures.png", className: "w-44" },
+  { url: "/Ookeenga.png", className: "w-44" },
+  { url: "/Owl Protocal.png", className: "w-28" },
+  { url: "/Polygon_Studios.svg", className: "w-44" },
+  { url: "/Spores_Network.svg", className: "w-44" },
+  { url: "/Swallow.svg", className: "w-44" },
+  { url: "/TRUSST.png", className: "w-44" },
+  { url: "/V2B.jpg", className: "w-44" },
+  { url: "/VulcanVerse.jpg", className: "w-44" },
+  { url: "/Elysium.png", className: "w-44" },
 ];
 
 export default function Home() {
@@ -154,16 +132,7 @@ export default function Home() {
           <div
             className="container relative grid max-w-screen-xl gap-8 py-12 mx-auto md:grid-cols-2 bg-neutral-900/50"
           >
-            <video
-              className="object-cover min-w-full min-h-full mix-blend-difference"
-              autoPlay
-              playsInline
-              muted
-              loop
-            >
-              <source src="/nft.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <img src="/vendettadaoLogo.png" className="w-full"></img>
             <div>
               <h2 className="mb-4 text-3xl font-semibold text-white">Vendetta Token ($VDT)</h2>
               <div className="max-w-lg text-neutral-300">
@@ -184,10 +153,10 @@ export default function Home() {
                 <br />
                 {showInfo && (
                   <p>
-                    We continually work to improve existing game or build new games to further enhance the token’s 
-                    utility. Ensuring that $VDT has the ability to grow while performing the role of an in-game 
-                    token is a core focus of the Vendetta team. We know the ramifications of a token build on unsound 
-                    principals. The tokenomics of the $VDT token were rigorously determined to ensure an optimal 
+                    We continually work to improve existing game or build new games to further enhance the token’s
+                    utility. Ensuring that $VDT has the ability to grow while performing the role of an in-game
+                    token is a core focus of the Vendetta team. We know the ramifications of a token build on unsound
+                    principals. The tokenomics of the $VDT token were rigorously determined to ensure an optimal
                     distribution. Making sure we have enough tokens in the right hands is key to our success.
                   </p>
                 )}
@@ -208,7 +177,7 @@ export default function Home() {
                     Chalk River Territory is a stunning Wild West Metaverse.
                   </p>
                   <br />
-                  <p>Ever since gold was discovered, the territory has been overrun with every type of hired gun, wildcatter, 
+                  <p>Ever since gold was discovered, the territory has been overrun with every type of hired gun, wildcatter,
                     card cheat, and carpetbagger to ever roam the West.
                   </p>
                   <br />
@@ -221,15 +190,15 @@ export default function Home() {
                     <li>Scholarship program</li>
                   </ul>
                   <br />
-                  <p>The Chalk River metaverse is loaded with natural resources for those brave enough to blast them out. 
-                    The town of Chalk River was erected shortly after the discovery of the mine. The local inhabitants 
-                    created a guild to protect the town and themselves against the hostile forces hellbent on taking over 
+                  <p>The Chalk River metaverse is loaded with natural resources for those brave enough to blast them out.
+                    The town of Chalk River was erected shortly after the discovery of the mine. The local inhabitants
+                    created a guild to protect the town and themselves against the hostile forces hellbent on taking over
                     the town and the mine.
                   </p>
                   <br />
                   <p>
-                  To survive in this territory, you need to be tough and you need to know how to shoot. 
-                  Often one is the key to the other.
+                    To survive in this territory, you need to be tough and you need to know how to shoot.
+                    Often one is the key to the other.
                   </p>
 
                 </div>
@@ -266,10 +235,10 @@ export default function Home() {
                 <h2 className="mb-4 text-3xl font-semibold text-white">Vendetta Studios</h2>
                 <div className="max-w-lg text-neutral-300">
                   <p>
-                  Vendetta Games was created to build games for the Vendetta community. Vendetta Games takes a 365 
-                  degree approach to every games we build. We start by trying to understand what reality is in each 
-                  metaverse game we create. Drawing from elements unique to each project allows us to make games that 
-                  are fun to play and beautiful to look at.
+                    Vendetta Games was created to build games for the Vendetta community. Vendetta Games takes a 365
+                    degree approach to every games we build. We start by trying to understand what reality is in each
+                    metaverse game we create. Drawing from elements unique to each project allows us to make games that
+                    are fun to play and beautiful to look at.
                   </p>
                   <br />
                   <ul className="text-left list-disc">
@@ -291,10 +260,10 @@ export default function Home() {
                 <h2 className="mb-4 text-3xl font-semibold text-white">Vendetta Guild</h2>
                 <div className="max-w-lg text-neutral-300">
                   <p>
-                  The Vendetta Guild is the heart and soul of the ecosystem. It offers one of the most attractive scholarship 
-                  opportunities in the metaverse. We work with the best developers to create a lending platform that makes it 
-                  easy for the player and safe for the asset owner. The Vendetta Scholarship Program is entirely trustless and 
-                  decentralized.
+                    The Vendetta Guild is the heart and soul of the ecosystem. It offers one of the most attractive scholarship
+                    opportunities in the metaverse. We work with the best developers to create a lending platform that makes it
+                    easy for the player and safe for the asset owner. The Vendetta Scholarship Program is entirely trustless and
+                    decentralized.
                   </p>
                   <br />
                   <ul className="text-left list-disc">
@@ -308,16 +277,7 @@ export default function Home() {
 
                 </div>
               </div>
-              <video
-                className="object-cover min-w-full min-h-full mix-blend-difference"
-                autoPlay
-                playsInline
-                muted
-                loop
-              >
-                <source src="/nft.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <img src="Guild.jpg" className="rounded-xl"></img>
 
             </div>
 
@@ -326,22 +286,22 @@ export default function Home() {
               className="container relative grid max-w-screen-xl gap-8 py-12 mx-auto md:grid-cols-2 bg-neutral-900/50"
             >
               <video
-                className="object-cover min-w-full min-h-full mix-blend-difference"
+                className="object-cover min-w-full min-h-full rounded-xl mix-blend-difference"
                 autoPlay
                 playsInline
                 muted
                 loop
               >
-                <source src="/nft.mp4" type="video/mp4" />
+                <source src="/Gameplay.webm" type="video/webm" />
                 Your browser does not support the video tag.
               </video>
               <div>
                 <h2 className="mb-4 text-3xl font-semibold text-white">Vendetta Launchpad</h2>
                 <div className="max-w-lg text-neutral-300">
                   <p>
-                  The Vendetta Launchpad propels the next generation of WEB3 projects into the stratosphere via an open 
-                  application for anyone with an idea for an NFT game or dApp. We will be assessing all applications and 
-                  choosing 50 of them to provide grants, technical support, and marketing.
+                    The Vendetta Launchpad propels the next generation of WEB3 projects into the stratosphere via an open
+                    application for anyone with an idea for an NFT game or dApp. We will be assessing all applications and
+                    choosing 50 of them to provide grants, technical support, and marketing.
                   </p>
                   <br />
                   <ul className="text-left list-disc">
@@ -372,8 +332,11 @@ export default function Home() {
           <div className="container max-w-screen-xl py-6 bg-neutral-900">
             <h2 className="mb-4 text-3xl font-semibold text-center text-white">Partners</h2>
             <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-4">
+
               {logos.map((logo) => (
-                <img src={logo} alt="logo" className="" />
+                <div className={`flex flex-wrap items-center justify-center ${logo.className}`}>
+                  <img src={logo.url} alt="logo"/>
+                </div>
               ))}
             </div>
           </div>
