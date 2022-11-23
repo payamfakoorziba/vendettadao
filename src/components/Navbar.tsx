@@ -40,19 +40,19 @@ const navigation: NavItem[] = [
   { name: "Home", href: "/" },
   { name: "DEX", href: "#" },
   { name: "Store", href: "https://chalkrivergeneralstore.nftify.network/" },
-  {
-    name: "Store",
-    items: [
-      {
-        name: "NFT marketplace",
-        href: "https://mcswyzzle-crypto-freedom.gitbook.io/vendettadao-lite-paper.2/general-overview/vendetta-ecosystem"
-      },
-      {
-        name: "Merchandise",
-        href: "https://vendettadao.com/wp-content/uploads/2022/08/NFT-DECK.pdf"
-      },
-    ]
-  },
+  // {
+  //   name: "Store",
+  //   items: [
+  //     {
+  //       name: "NFT marketplace",
+  //       href: "https://mcswyzzle-crypto-freedom.gitbook.io/vendettadao-lite-paper.2/general-overview/vendetta-ecosystem"
+  //     },
+  //     {
+  //       name: "Merchandise",
+  //       href: "https://vendettadao.com/wp-content/uploads/2022/08/NFT-DECK.pdf"
+  //     },
+  //   ]
+  // },
   {
     name: "Docs",
     items: [
@@ -62,11 +62,11 @@ const navigation: NavItem[] = [
       },
       {
         name: "NFT Deck",
-        href: "https://vendettadao.com/wp-content/uploads/2022/08/NFT-DECK.pdf"
+        href: "/NFT-DECK.pdf"
       },
       {
         name: "Investment Proposal",
-        href: "https://vendettadao.com/wp-content/uploads/2022/07/Vendetta-Investment-Deck-1-1.pdf"
+        href: "/Vendetta-Investment-Deck-1-1.pdf"
       },
     ]
   },

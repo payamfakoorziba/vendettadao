@@ -106,11 +106,13 @@ export default function Home() {
                 )}
               </div>
             </div>
-            <img
+            {/* <img
               src="/learn_more_image.jpg"
               alt="learn more"
               className="object-cover w-full h-full rounded-xl"
-            />
+            /> */}
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/d_a9ihlGpBg?controls=0" title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
           </div>
 
           {/* Stats */}
@@ -193,7 +195,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <video
+                {/* <video
                   className="object-cover min-w-full min-h-full mix-blend-difference"
                   autoPlay
                   playsInline
@@ -202,21 +204,18 @@ export default function Home() {
                 >
                   <source src="/nft.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
-                </video>
+                </video> */}
+                <iframe width="560" height="400" src="https://www.youtube.com/embed/6LulYI_pYNI?controls=0" title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
               </div>
 
               {/* Vendetta Studios */}
               <div className="container relative grid max-w-screen-xl gap-8 py-12 mx-auto md:grid-cols-2 bg-neutral-900/50">
-                <video
-                  className="object-cover min-w-full min-h-full mix-blend-difference"
-                  autoPlay
-                  playsInline
-                  muted
-                  loop
-                >
-                  <source src="/nft.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <img
+                  src="/learn_more_image.jpg"
+                  alt="learn more"
+                  className="object-cover w-full h-full rounded-xl"
+                />
                 <div>
                   <h2 className="mb-4 text-3xl font-semibold text-white">Vendetta Studios</h2>
                   <div className="max-w-lg text-neutral-300">
@@ -268,13 +267,13 @@ export default function Home() {
               {/* Vendetta Launchpad */}
               <div className="container relative grid max-w-screen-xl gap-8 py-12 mx-auto md:grid-cols-2 bg-neutral-900/50">
                 <video
-                  className="object-cover min-w-full min-h-full rounded-xl mix-blend-difference"
+                  className="object-cover min-w-full min-h-full mix-blend-difference"
                   autoPlay
                   playsInline
                   muted
                   loop
                 >
-                  <source src="/Gameplay.webm" type="video/webm" />
+                  <source src="/nft.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <div>

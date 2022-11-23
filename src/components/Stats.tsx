@@ -3,12 +3,12 @@ export function Stats() {
     <div className="pt-12 bg-neutral-900 sm:pt-16">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          {/* <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Lorem ipsum dolor sit amet.
-          </h2>
-          <p className="mt-3 text-xl text-gray-300 sm:mt-4">
+          </h2> */}
+          {/* <p className="mt-3 text-xl text-gray-300 sm:mt-4">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus repellat laudantium.
-          </p>
+          </p> */}
         </div>
       </div>
       <div className="pb-12 mt-10 bg-neutral-900 sm:pb-16">
