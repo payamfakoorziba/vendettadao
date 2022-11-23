@@ -27,10 +27,10 @@ export default function ContactForm() {
       <div className="relative mx-auto max-w-xl">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">Contact sales</h2>
-          <p className="mt-4 text-lg leading-6 text-gray-300">
+          {/* <p className="mt-4 text-lg leading-6 text-gray-300">
             Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus
             arcu.
-          </p>
+          </p> */}
         </div>
         <div className="mt-12">
           <form action="#" method="POST" className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">

@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Hero>
         <h1 className="font-serif text-center text-6xl lg:text-8xl text-white tracking-tight font-bold">
-          STINKY
+          oops
         </h1>
         <h3 className="text-2xl md:text-3xl text-neutral-200 font-medium">
           An ecosystem with a score to settle
