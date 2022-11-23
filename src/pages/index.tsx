@@ -5,6 +5,7 @@ import { Stats } from "components/Stats";
 import { useRef, useState } from "react";
 
 const logos = [
+  { url: "/Elysium_Blockchain.webp", className: "w-44"}, 
   { url: "/AlphaBlockz.png", className: "w-44" },
   { url: "/BSCLaunch.png", className: "w-44" },
   { url: "/Coorest.png", className: "w-44" },
