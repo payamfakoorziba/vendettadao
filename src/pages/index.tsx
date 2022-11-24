@@ -1,11 +1,11 @@
+import { useRef, useState } from "react";
+import { IFrameSection } from "components/IFrameSection";
 import { Hero } from "components/hero";
-import Navbar from "components/Navbar";
 import { SplitCard } from "components/SplitCard";
 import { Stats } from "components/Stats";
-import { useRef, useState } from "react";
 
 const logos = [
-  { url: "/Elysium_Blockchain.webp", className: "w-44"}, 
+  { url: "/Elysium_Blockchain.webp", className: "w-44" },
   { url: "/AlphaBlockz.png", className: "w-44" },
   { url: "/BSCLaunch.png", className: "w-44" },
   { url: "/Coorest.png", className: "w-44" },
@@ -107,13 +107,8 @@ export default function Home() {
                 )}
               </div>
             </div>
-            {/* <img
-              src="/learn_more_image.jpg"
-              alt="learn more"
-              className="object-cover w-full h-full rounded-xl"
-            /> */}
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/d_a9ihlGpBg?controls=0" title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+
+            <IFrameSection src="https://www.youtube.com/embed/d_a9ihlGpBg?controls=0" />
           </div>
 
           {/* Stats */}
@@ -159,7 +154,7 @@ export default function Home() {
           {showInfo && (
             <>
               {/* Chalk River */}
-              <div className="container relative grid max-w-screen-xl gap-8 py-12 mx-auto md:grid-cols-2 bg-neutral-900/50">
+              <div className="container relative grid grid-cols-1 max-w-screen-xl gap-8 py-12 mx-auto xl:grid-cols-2 bg-neutral-900/50">
                 <div>
                   <h2 className="mb-4 text-3xl font-semibold text-white">Chalk River</h2>
                   <div className="max-w-lg text-neutral-300">
@@ -196,18 +191,8 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                {/* <video
-                  className="object-cover min-w-full min-h-full mix-blend-difference"
-                  autoPlay
-                  playsInline
-                  muted
-                  loop
-                >
-                  <source src="/nft.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video> */}
-                <iframe width="560" height="400" src="https://www.youtube.com/embed/6LulYI_pYNI?controls=0" title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+
+                <IFrameSection src="https://www.youtube.com/embed/6LulYI_pYNI?controls=0" />
               </div>
 
               {/* Vendetta Studios */}

@@ -7,6 +7,10 @@
 @import 'tailwindcss/utilities';
 
 
+html {
+  @apply bg-neutral-900;
+}
+
 ul {
   @apply ml-4;
 }
