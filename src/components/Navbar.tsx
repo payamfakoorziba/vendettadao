@@ -35,7 +35,6 @@ const useActiveElement = () => {
 
 const navigation: NavItem[] = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
   // { name: "DEX", href: "#" },
   { name: "Store", href: "https://chalkrivergeneralstore.nftify.network/" },
   // {
