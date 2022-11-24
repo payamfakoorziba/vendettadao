@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Disclosure, Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/20/solid";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+
 
 interface NavItem {
   name: React.ReactNode;
@@ -203,12 +205,13 @@ const Navbar = () => {
             </div>
           </div>
           <div className="hidden 2md:flex 2md:items-center 2md:space-x-6">
-            <a
+            {/* <a
               href="#"
               className="inline-flex items-center px-4 py-2 text-base font-medium bg-orange-700 border border-transparent rounded-md text-neutral-100 hover:bg-orange-800"
             >
               Connect Wallet
-            </a>
+            </a> */}
+            <ConnectButton />
           </div>
         </nav>
       </div>
