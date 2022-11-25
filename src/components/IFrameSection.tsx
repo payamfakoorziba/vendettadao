@@ -4,7 +4,7 @@ export const IFrameSection = ({ src }: { src: string }) => (
       src={src}
       title="YouTube video player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      className="w-full h-full "
+      // className="w-full h-full "
     ></iframe>
   </div>
 );

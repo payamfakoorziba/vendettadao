@@ -26,6 +26,58 @@ const logos = [
   { url: "/Elysium.png", className: "w-44" }
 ];
 
+// Mcswyzzle - Governor
+// Fanzey - General
+// E-Rock - Wordsmith
+// Fryatt - Propagandist
+// Bergz - Industrialist
+// Floyd - Blocksmith
+// Glitched Viking - Strategist
+// Jamie Thompson - Advisor & CEO of Vulcan Forged)
+
+const team = [
+  {
+    name: "Mcswyzzle",
+    title: "Governor",
+    image: "/Team/MCSWYZZLE.png",
+  },
+  {
+    name: "Fanzey",
+    title: "General",
+    image: "/Team/FANZEY.png",
+  },
+  {
+    name: "E-Rock",
+    title: "Wordsmith",
+    image: "/Team/erock.png",
+  },
+  {
+    name: "Fryatt",
+    title: "Propagandist",
+    image: "/Team/Fryatt.png",
+  },
+  {
+    name: "Bergz",
+    title: "Industrialist",
+    image: "/Team/BERGS.png",
+  },
+  {
+    name: "Floyd",
+    title: "Blocksmith",
+    image: "/Team/FLOYD.png",
+  },
+  {
+    name: "Glitched Viking",
+    title: "Strategist",
+    image: "/Team/GlitchedViking.png",
+  },
+  {
+    name: "Jamie Thompson",
+    title: "Advisor & CEO of Vulcan Forged",
+    image: "/Team/Jamie Thompson.png",
+  },
+];
+
 export default function Home() {
   const [showInfo, setShowInfo] = useState(false);
   const overviewRef = useRef<HTMLDivElement>(null);
@@ -192,16 +244,21 @@ export default function Home() {
                   </div>
                 </div>
 
-                <IFrameSection src="https://www.youtube.com/embed/6LulYI_pYNI?controls=0" />
+                <IFrameSection src="https://www.youtube.com/embed/7vTw1P-jWvE" />
               </div>
 
               {/* Vendetta Studios */}
               <div className="container relative grid max-w-screen-xl gap-8 py-12 mx-auto md:grid-cols-2 bg-neutral-900/50">
-                <img
-                  src="/learn_more_image.jpg"
-                  alt="learn more"
-                  className="object-cover w-full h-full rounded-xl"
-                />
+                <video
+                  className="object-cover min-w-full min-h-full mix-blend-difference"
+                  autoPlay
+                  playsInline
+                  muted
+                  loop
+                >
+                  <source src="/DayNight.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
                 <div>
                   <h2 className="mb-4 text-3xl font-semibold text-white">Vendetta Studios</h2>
                   <div className="max-w-lg text-neutral-300">
@@ -316,6 +373,16 @@ export default function Home() {
               ))}
             </div>
           </div>
+
+          {/* TEAM 
+          <div className="container max-w-screen-xl py-6 bg-neutral-900">
+            <h2 className="mb-4 text-3xl font-semibold text-center text-white">Partners</h2>
+            <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-4 place-items-center">
+              {team.map((member) => (
+                <img src={member.image} alt="logo" key={member.name} />
+              ))}
+            </div>
+          </div> */}
         </main>
       </div>
     </>
