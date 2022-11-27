@@ -31,7 +31,7 @@ const team = [
   {
     name: "Mcswyzzle",
     title: "Governor",
-    image: "/Team/MCSWYZZLE.png",
+    image: "/Team/mcswyzzle-1.png",
     className: "w-44"
   },
   {
@@ -79,7 +79,7 @@ const team = [
   {
     name: "Payam",
     title: "Developer",
-    image: "/Team/payam.jpg",
+    image: "/Team/payam-dev.jpg",
     className: "w-44"
   },
 ];
