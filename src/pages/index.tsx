@@ -26,55 +26,61 @@ const logos = [
   { url: "/Elysium.png", className: "w-44" }
 ];
 
-// Mcswyzzle - Governor
-// Fanzey - General
-// E-Rock - Wordsmith
-// Fryatt - Propagandist
-// Bergz - Industrialist
-// Floyd - Blocksmith
-// Glitched Viking - Strategist
-// Jamie Thompson - Advisor & CEO of Vulcan Forged)
 
 const team = [
   {
     name: "Mcswyzzle",
     title: "Governor",
     image: "/Team/MCSWYZZLE.png",
+    className: "w-44"
   },
   {
     name: "Fanzey",
     title: "General",
-    image: "/Team/FANZEY.png",
+    image: "/Team/FANZEY.jpg",
+    className: "w-44"
   },
   {
     name: "E-Rock",
     title: "Wordsmith",
     image: "/Team/erock.png",
+    className: "w-44"
   },
   {
     name: "Fryatt",
     title: "Propagandist",
-    image: "/Team/Fryatt.png",
+    image: "/Team/Fryatt.jpg",
+    className: "w-44"
   },
   {
     name: "Bergz",
     title: "Industrialist",
-    image: "/Team/BERGS.png",
+    image: "/Team/BERGS.jpg",
+    className: "w-44"
   },
   {
     name: "Floyd",
     title: "Blocksmith",
-    image: "/Team/FLOYD.png",
+    image: "/Team/FLOYD.jpg",
+    className: "w-44"
   },
   {
     name: "Glitched Viking",
     title: "Strategist",
-    image: "/Team/GlitchedViking.png",
+    image: "/Team/GlitchedViking.jpg",
+    className: "w-44"
   },
   {
     name: "Jamie Thompson",
     title: "Advisor & CEO of Vulcan Forged",
-    image: "/Team/Jamie Thompson.png",
+    image: "/Team/jaime cowboy.png",
+    className: "w-44"
+  },
+  {
+    name: "Payam",
+    title: "Developer",
+    image: "/Team/payam.jpg",
+    className: "w-44"
   },
 ];
 
@@ -366,7 +372,7 @@ export default function Home() {
 
           {/* Partners  */}
           <div className="container max-w-screen-xl py-6 bg-neutral-900">
-            <h2 className="mb-4 text-3xl font-semibold text-center text-white">Partners</h2>
+            <h2 className="mb-7 text-3xl font-semibold text-center text-white">Partners</h2>
             <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-4 place-items-center">
               {logos.map((logo) => (
                 <img src={logo.url} alt="logo" key={logo.url} className={logo.className} />
@@ -374,15 +380,20 @@ export default function Home() {
             </div>
           </div>
 
-          {/* TEAM 
           <div className="container max-w-screen-xl py-6 bg-neutral-900">
-            <h2 className="mb-4 text-3xl font-semibold text-center text-white">Partners</h2>
-            <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-4 place-items-center">
+            <h2 className="mb-7 text-3xl font-semibold text-center text-white">Team</h2>
+            <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4 justify-items-center">
               {team.map((member) => (
-                <img src={member.image} alt="logo" key={member.name} />
+                <div className="flex flex-col items-center justify-between">
+                  <img src={member.image} alt="logo" key={member.name} className={member.className} />
+                  <div>
+                    <h2 className="text-white text-center text-3xl">{member.name}</h2>
+                    <h2 className="text-white text-center text-sm">{member.title}</h2>
+                  </div>
+                </div>
               ))}
             </div>
-          </div> */}
+          </div>
         </main>
       </div>
     </>
