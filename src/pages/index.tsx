@@ -56,25 +56,25 @@ const team = [
     name: "Bergz",
     title: "Industrialist",
     image: "/Team/BERGS.jpg",
-    className: "w-44"
+    className: "w-48"
   },
   {
     name: "Floyd",
     title: "Blocksmith",
     image: "/Team/FLOYD.jpg",
-    className: "w-44"
+    className: "w-48"
   },
   {
     name: "Glitched Viking",
     title: "Strategist",
     image: "/Team/GlitchedViking.jpg",
-    className: "w-44"
+    className: "w-48"
   },
   {
     name: "Jamie Thompson",
     title: "Advisor & CEO of Vulcan Forged",
     image: "/Team/jaime cowboy.png",
-    className: "w-44"
+    className: "w-48"
   },
   {
     name: "Payam",
@@ -176,7 +176,7 @@ export default function Home() {
           {/* Token */}
 
           <div className="container relative grid max-w-screen-xl gap-8 py-12 mx-auto md:grid-cols-2 bg-neutral-900/50">
-            <img src="/vendettadaoLogo.png" className="w-full"></img>
+            <img src="/vendettadaoLogo.png" className="w-1/2 ml-20"></img>
             <div>
               <h2 className="mb-4 text-3xl font-semibold text-white">Vendetta Token ($VDT)</h2>
               <div className="max-w-lg text-neutral-300">
@@ -385,7 +385,7 @@ export default function Home() {
             <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4 justify-items-center">
               {team.map((member) => (
                 <div className="flex flex-col items-center justify-between">
-                  <img src={member.image} alt="logo" key={member.name} className={member.className} />
+                  <img src={member.image} alt="logo" key={member.name} className={`${member.className} rounded-full`} />
                   <div>
                     <h2 className="text-white text-center text-3xl">{member.name}</h2>
                     <h2 className="text-white text-center text-sm">{member.title}</h2>
