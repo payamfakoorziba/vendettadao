@@ -6,24 +6,24 @@ import { Stats } from "components/Stats";
 
 const logos = [
   { url: "/Elysium_Blockchain.webp", className: "w-44" },
-  { url: "/AlphaBlockz.png", className: "w-44" },
+  { url: "/Elysium.png", className: "w-44" },
   { url: "/BSCLaunch.png", className: "w-44" },
-  { url: "/Coorest.png", className: "w-44" },
+  { url: "/Metopia.png", className: "w-44" },
   { url: "/Cyber K.png", className: "w-44" },
+  { url: "/AlphaBlockz.png", className: "w-44 bg-neutral-100" },
+  { url: "/OGVentures.png", className: "w-44" },
+  { url: "/TRUSST.png", className: "w-44" },
   { url: "/Fables _of_Fyra.png", className: "w-44" },
   { url: "/GOB.png", className: "w-44" },
   { url: "/Heroes_Land.jpg", className: "w-44" },
-  { url: "/Metopia.png", className: "w-44" },
-  { url: "/OGVentures.png", className: "w-44" },
-  { url: "/Ookeenga.png", className: "w-44" },
-  { url: "/Owl Protocal.png", className: "w-28" },
-  { url: "/Polygon_Studios.svg", className: "w-44" },
-  { url: "/Spores_Network.svg", className: "w-44" },
   { url: "/Swallow.svg", className: "w-44" },
-  { url: "/TRUSST.png", className: "w-44" },
-  { url: "/V2B.jpg", className: "w-44" },
+  { url: "/Polygon_Studios.svg", className: "w-44 bg-neutral-100" },
+  { url: "/Spores_Network.svg", className: "w-44" },
+  { url: "/Ookeenga.png", className: "w-44" },
+  { url: "/Coorest.png", className: "w-44" },
+  { url: "/Owl Protocal.png", className: "w-28" },
+  // { url: "/V2B.jpg", className: "w-44" },
   { url: "/VulcanVerse.jpg", className: "w-44" },
-  { url: "/Elysium.png", className: "w-44" }
 ];
 
 
