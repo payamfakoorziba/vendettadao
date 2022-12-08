@@ -60,7 +60,7 @@ const team = [
   // {
   //   name: "Floyd",
   //   title: "Blocksmith",
-  //   image: "/Team/FLOYD.jpg",
+  //   image: "/Team/FLOYD.jpg", // this is a comment
   //   className: "w-48",
   // },
   {
