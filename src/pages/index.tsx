@@ -57,12 +57,12 @@ const team = [
     image: "/Team/BERGS.jpg",
     className: "w-48",
   },
-  // {
-  //   name: "Floyd",
-  //   title: "Blocksmith",
-  //   image: "/Team/FLOYD.jpg", // this is a comment
-  //   className: "w-48",
-  // },
+  {
+    name: "Floyd",
+    title: "Blocksmith",
+    image: "/Team/FLOYD.jpg",
+    className: "w-48",
+  },
   {
     name: "Glitched Viking",
     title: "Strategist",
