@@ -46,16 +46,22 @@ const team = [
     className: "w-44",
   },
   {
+    name: "Bergz",
+    title: "Industrialist",
+    image: "/Team/BERGS.jpg",
+    className: "w-48",
+  },
+  {
     name: "Fryatt",
     title: "Propagandist",
     image: "/Team/Fryatt.jpg",
     className: "w-44",
   },
   {
-    name: "Bergz",
-    title: "Industrialist",
-    image: "/Team/BERGS.jpg",
-    className: "w-48",
+    name: "Payam",
+    title: "Developer",
+    image: "/Team/payam-dev.jpg",
+    className: "w-44",
   },
   {
     name: "Floyd",
@@ -75,13 +81,7 @@ const team = [
     image: "/Team/jaime cowboy.png",
     className: "w-48",
   },
-  {
-    name: "Payam",
-    title: "Developer",
-    image: "/Team/payam-dev.jpg",
-    className: "w-44",
-  },
-] as const;
+];
 
 export default function Home() {
   const [showInfo, setShowInfo] = useState(false);
@@ -423,19 +423,11 @@ export default function Home() {
             <h2 className="mb-7 text-3xl font-semibold text-center text-white">
               Team
             </h2>
-            <div className="">
+            <div>
               <div className="hidden md:block">
-                {team
-                  .reduce((acc, cur, i) => {
-                    if (i % 3 === 0) {
-                      acc.push([cur]);
-                    } else {
-                      acc[acc.length - 1].push(cur);
-                    }
-                    return acc;
-                  }, [])
+                {[team.slice(0,3), team.slice(3,7), team.slice(7, 9)]
                   .map((group, i) => (
-                    <div className="p-1 flex" key={i}>
+                    <div className=" p-1 flex" key={i}>
                       {group.map((member) => (
                         <div className="text-center w-full text-white flex-col flex items-center">
                           <img
@@ -446,7 +438,6 @@ export default function Home() {
                           />
                           <h2 className="text-3xl">{member.name}</h2>
                           <h2 className="text-sm">{member.title}</h2>
-                          <div></div>
                         </div>
                       ))}
                     </div>
@@ -474,15 +465,15 @@ export default function Home() {
                           />
                           <h2 className="text-3xl">{member.name}</h2>
                           <h2 className="text-sm">{member.title}</h2>
-                          <div></div>
                         </div>
                       ))}
                     </div>
                   ))}
               </div>
             </div>
-            <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4 justify-items-center">
-              {/* {team.map((member) => (
+            {/* Stinky implementation */}
+            {/* <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4 justify-items-center">
+              {team.map((member) => (
                 <div className="flex flex-col items-center justify-between">
                   <img src={member.image} alt="logo" key={member.name} className={`${member.className} rounded-full`} />
                   <div>
@@ -490,9 +481,8 @@ export default function Home() {
                     <h2 className="text-white text-center text-sm">{member.title}</h2>
                   </div>
                 </div>
-              ))} */}
-              {/* group by threes */}
-            </div>
+              ))}
+            </div> */}
           </div>
         </main>
       </div>
