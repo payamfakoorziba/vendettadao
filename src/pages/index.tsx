@@ -193,7 +193,7 @@ export default function Home() {
                   The <span className="text-orange-400">Vendetta token</span> is
                   the lifeblood of our ecosystem and the native token of the
                   Vendetta ecosystem. It is our{" "}
-                  <span className="text-orange-400"> in-game currency</span>
+                  <span className="text-orange-400"> in-game currency </span>
                   and has numerous other utility benefits to the holder.
                   Pre-sale and Public sale proceeds of tokens will be a welcome
                   inflow of early capital.
@@ -208,11 +208,11 @@ export default function Home() {
                 <br />
                 {showInfo && (
                   <p>
-                    We continually work to improve existing game or build new
+                    We continually work to improve the existing game or build new
                     games to further enhance the token’s utility. Ensuring that
                     $VDT has the ability to grow while performing the role of an
                     in-game token is a core focus of the Vendetta team. We know
-                    the ramifications of a token build on unsound principals.
+                    the ramifications of a token built on unsound principals.
                     The tokenomics of the $VDT token were rigorously determined
                     to ensure an optimal distribution. Making sure we have
                     enough tokens in the right hands is key to our success.
@@ -354,7 +354,7 @@ export default function Home() {
                 </video>
                 <div>
                   <h2 className="mb-4 text-3xl font-semibold text-white">
-                    Vendetta Launchpad
+                    Vendetta Launchpad (Coming soon)
                   </h2>
                   <div className="max-w-lg text-neutral-300">
                     <p>
