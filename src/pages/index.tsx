@@ -102,14 +102,28 @@ export default function Home() {
   return (
     <>
       <Hero>
-        <h1 className="font-serif font-bold tracking-tight text-center text-7xl md:text-8xl lg:text-9xl text-accent-300">
+        <h1 className="font-serif font-bold tracking-tight text-center text-4xl md:text-6xl lg:text-8xl text-accent-300">
           VENDETTA DAO
         </h1>
-        <h3 className="text-xl font-medium md:text-5xl text-neutral-200">
+        <h3 className="text-2xl font-medium md:text-4xl lg:text-6xl text-neutral-200">
           An ecosystem with a score to settle
         </h3>
         <button
-          className="flex items-center px-4 py-2 mt-5 text-sm font-medium bg-orange-700 border border-transparent rounded-md md:text-xl text-neutral-100 hover:bg-orange-800"
+          className="flex
+          items-center
+          px-4
+          py-2
+          mt-5
+          text-sm
+          font-medium
+          bg-orange-700
+          border
+          border-transparent
+          rounded-md
+          md:text-md
+          lg:text-xl
+          text-neutral-100
+          hover:bg-orange-800"
           onClick={onCTAClick}
         >
           Learn More
