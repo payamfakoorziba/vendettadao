@@ -77,8 +77,6 @@ export default function ContactForm() {
       setSending(false);
     }
 
-    console.debug("Sending email with params", templateParams);
-
     setTriedSubmit(false);
   };
 
