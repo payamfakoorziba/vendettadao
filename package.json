@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.10.0",
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
     "@rainbow-me/rainbowkit": "^0.8.0",
@@ -15,6 +16,7 @@
     "next": "12.0.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hot-toast": "^2.4.0",
     "wagmi": "^0.8.6"
   },
   "devDependencies": {

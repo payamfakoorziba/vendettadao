@@ -9,6 +9,7 @@ import { getDefaultWallets, RainbowKitProvider, darkTheme } from "@rainbow-me/ra
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
+import { Toaster } from "react-hot-toast";
 
 const { chains, provider } = configureChains(
   [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
@@ -45,6 +46,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
             <Footer />
           </div>
+          <Toaster position="bottom-right" />
         </RainbowKitProvider>
       </WagmiConfig>
     </>

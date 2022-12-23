@@ -1,39 +1,98 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
-import { useState } from 'react'
-import { Switch } from '@headlessui/react'
+import { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-hot-toast";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+const PUBLIC_KEY = "8NfZi2ZC2NBqlx2ye";
+const SERVICE_ID = "service_ikbsl2d";
+const TEMPLATE_ID = "template_ktje36b";
+
+export const emailValidator = (email: string): string => {
+  const errorMessage = "Invalid email";
+  if (!email) return errorMessage;
+
+  const emailParts = email.split("@");
+
+  if (emailParts.length !== 2) return errorMessage;
+
+  const account = emailParts[0];
+  const address = emailParts[1];
+
+  if (account.length > 64) return errorMessage;
+  else if (address.length > 255) return errorMessage;
+
+  const domainParts = address.split(".");
+  if (
+    domainParts.some(function (part) {
+      return part.length > 63;
+    })
+  )
+    return errorMessage;
+
+  const tester =
+    /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
+  if (!tester.test(email)) return errorMessage;
+
+  return "";
+};
 
 export default function ContactForm() {
-  const [agreed, setAgreed] = useState(false)
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
+  const [emailError, setEmailError] = useState("");
+  const [triedSubmit, setTriedSubmit] = useState(false);
+  const [sending, setSending] = useState(false);
+
+  useEffect(() => {
+    emailjs.init(PUBLIC_KEY);
+  }, []);
+
+  const onSubmit = async () => {
+    setTriedSubmit(true);
+    const emailError = emailValidator(email);
+    setEmailError(emailError);
+
+    if (emailError) {
+      return;
+    }
+
+    const templateParams = {
+      from_name: `${firstName} ${lastName}`,
+      from_email: email,
+      message
+    };
+
+    if (sending) return;
+
+    setSending(true);
+    try {
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
+      toast.success("Email sent successfully");
+    } catch (e) {
+      console.error(e);
+      toast.error("Something went wrong, please try again");
+    } finally {
+      setSending(false);
+    }
+
+    console.debug("Sending email with params", templateParams);
+
+    setTriedSubmit(false);
+  };
+
+  const showError = emailError && triedSubmit;
   return (
-    <div className="overflow-hidden py-16 px-4 sm:px-6 lg:px-8 lg:py-12">
+    <div className="overflow-hidden py-16 px-4 sm:px-2 lg:px-8 lg:py-12">
       <div className="relative mx-auto max-w-xl">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">Contact us</h2>
-          {/* <p className="mt-4 text-lg leading-6 text-gray-300">
-            Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus
-            arcu.
-          </p> */}
+          <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+            Contact us
+          </h2>
         </div>
         <div className="mt-12">
-          <form action="#" method="POST" className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+          <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
             <div>
               <label htmlFor="first-name" className="block text-sm font-medium text-gray-300">
                 First name
@@ -47,6 +106,8 @@ export default function ContactForm() {
                   className="block w-full rounded-md
                    border-gray-300 py-3 px-4 shadow-sm bg-gray-200
                     focus:border-accent-500 focus:ring-accent-500"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                 />
               </div>
             </div>
@@ -63,23 +124,12 @@ export default function ContactForm() {
                   className="block w-full rounded-md border-gray-300 py-3 px-4 shadow-sm
                    focus:border-accent-500 focus:ring-accent-500
                    bg-gray-200"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                 />
               </div>
             </div>
-            <div className="sm:col-span-2">
-              <label htmlFor="company" className="block text-sm font-medium text-gray-300">
-                Company
-              </label>
-              <div className="mt-1">
-                <input
-                  type="text"
-                  name="company"
-                  id="company"
-                  autoComplete="organization"
-                  className="block w-full bg-gray-200 rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-accent-500 focus:ring-accent-500"
-                />
-              </div>
-            </div>
+
             <div className="sm:col-span-2">
               <label htmlFor="email" className="block text-sm font-medium text-gray-300">
                 Email
@@ -90,41 +140,23 @@ export default function ContactForm() {
                   name="email"
                   type="email"
                   autoComplete="email"
-                  className="block w-full bg-gray-200
-                   rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-accent-500 focus:ring-accent-500"
+                  className={`block w-full bg-gray-200 rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-accent-500 focus:ring-accent-500
+                    ${showError && triedSubmit ? "border-red-500 bg-red-200" : ""}
+                    `}
+                  value={email}
+                  onChange={(e) => {
+                    setEmailError(emailValidator(e.target.value));
+                    setEmail(e.target.value);
+                  }}
                 />
+                {showError && (
+                  <p className="mt-2 text-sm text-red-600" id="email-error">
+                    {emailError}
+                  </p>
+                )}
               </div>
             </div>
-            <div className="sm:col-span-2">
-              <label htmlFor="phone-number" className="block text-sm font-medium text-gray-300">
-                Phone Number
-              </label>
-              <div className="relative mt-1 rounded-md shadow-sm">
-                <div className="absolute inset-y-0 left-0 flex items-center">
-                  <label htmlFor="country" className="sr-only">
-                    Country
-                  </label>
-                  <select
-                    id="country"
-                    name="country"
-                    className="h-full rounded-md border-transparent bg-transparent py-0 pl-4 pr-8 text-gray-500 focus:border-accent-500 focus:ring-accent-500"
-                  >
-                    <option>US</option>
-                    <option>CA</option>
-                    <option>EU</option>
-                  </select>
-                </div>
-                <input
-                  type="text"
-                  name="phone-number"
-                  id="phone-number"
-                  autoComplete="tel"
-                  className="block w-full rounded-md border-gray-300 
-                  bg-gray-200 py-3 px-4 pl-20 focus:border-accent-500 focus:ring-accent-500"
-                  placeholder="+1 (555) 987-6543"
-                />
-              </div>
-            </div>
+
             <div className="sm:col-span-2">
               <label htmlFor="message" className="block text-sm font-medium text-gray-300">
                 Message
@@ -135,7 +167,9 @@ export default function ContactForm() {
                   name="message"
                   rows={4}
                   className="block w-full bg-gray-200 rounded-md border-gray-300 py-3 px-4 shadow-sm focus:border-accent-500 focus:ring-accent-500"
-                  defaultValue={''}
+                  defaultValue={""}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
             </div>
@@ -161,13 +195,15 @@ export default function ContactForm() {
                 focus:ring-2
                 focus:ring-accent-500
                 focus:ring-offset-2"
+                onClick={onSubmit}
+                disabled={sending}
               >
-                Let's talk
+                {sending ? "Sending..." : "Let's talk"}
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
