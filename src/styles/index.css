@@ -15,7 +15,15 @@ ul {
   @apply ml-4;
 }
 
+ol {
+  @apply ml-4;
+}
+
 /* color the disc */
 ul li {
+  @apply marker:text-orange-500
+}
+
+ol li {
   @apply marker:text-orange-500
 }
