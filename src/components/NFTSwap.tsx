@@ -130,7 +130,7 @@ export default function NFTSwapForm() {
               {/* Same Elysium */}
               <div className="hidden mt-6 peer-checked/sameElysium:block">
                 <p>
-                  <span className="font-bold">Paste your Elysium address</span>
+                  <span className="font-bold">Paste your Elysium address </span>
                   <span className="text-red-600">*</span>
                   <br />
                   <span>We'll send your NFTs to this address.</span>
@@ -153,12 +153,140 @@ export default function NFTSwapForm() {
               </div>
 
               {/* Not Same Elysium */}
+              <div className="hidden mt-6 peer-checked/notSameElysium:block">
+                <p>
+                  To prove ownership, send the deprecated NFTs to VendettaDAO to
+                  verify and burn.
+                </p>
+                <br />
+                <u>Follow these steps:</u>
+                <ol className="list-decimal">
+                  <li>
+                    Send your NFTs to the following VeChain address:
+                    <br />
+                    <br />
+                    0x???
+                    <br />
+                    <br />
+                  </li>
+                  <li>Copy the transaction ID</li>
+                  <li>Proceed to the next step</li>
+                </ol>
+                <br />
+                <p>
+                  <span className="font-bold">Paste your transaction ID </span>
+                  <span className="text-red-600">*</span>
+                  <br />
+                  For multiple transactions, press ENTER after each transaction
+                  ID
+                </p>
+                {/* TODO: textbox */}
+                <input
+                  type="text"
+                  id="transactionID"
+                  required
+                  className="block
+                    mt-2
+                    w-full
+                    rounded-md
+                    border-gray-300
+                    py-3 px-4 shadow-sm
+                    focus:border-accent-50
+                    focus:ring-accent-500
+                    bg-gray-200
+                    text-gray-900"
+                />
+                <br />
+                <p>
+                  <span className="font-bold">Paste your Elysium address </span>
+                  <span className="text-red-600">*</span>
+                  <br />
+                  We'll send your NFTs to this address.
+                </p>
+                <input
+                  type="text"
+                  id="ElysiumAddress"
+                  required
+                  className="block
+                    mt-2
+                    w-full
+                    rounded-md
+                    border-gray-300
+                    py-3 px-4 shadow-sm
+                    focus:border-accent-50
+                    focus:ring-accent-500
+                    bg-gray-200
+                    text-gray-900"
+                />
+              </div>
             </div>
           </div>
 
           {/* vechain */}
           <div className="hidden mt-2 text-white peer-checked/vechain:block">
-            <h1>vechain</h1>
+            <p>
+              To prove ownership, send the deprecated NFTs to VendettaDAO to
+              verify and burn.
+            </p>
+            <br />
+            <u>Follow these steps:</u>
+            <ol className="list-decimal">
+              <li>
+                Send your NFTs to the following VeChain address:
+                <br />
+                <br />
+                0x???
+                <br />
+                <br />
+              </li>
+              <li>Copy the transaction ID</li>
+              <li>Proceed to the next step</li>
+            </ol>
+            <br />
+            <p>
+              <span className="font-bold">Paste your transaction ID </span>
+              <span className="text-red-600">*</span>
+              <br />
+              For multiple transactions, press ENTER after each transaction ID
+            </p>
+            {/* TODO: textbox */}
+            <input
+              type="text"
+              id="transactionID"
+              required
+              className="block
+                    mt-2
+                    w-full
+                    rounded-md
+                    border-gray-300
+                    py-3 px-4 shadow-sm
+                    focus:border-accent-50
+                    focus:ring-accent-500
+                    bg-gray-200
+                    text-gray-900"
+            />
+            <br />
+            <p>
+              <span className="font-bold">Paste your Elysium address </span>
+              <span className="text-red-600">*</span>
+              <br />
+              We'll send your NFTs to this address.
+            </p>
+            <input
+              type="text"
+              id="ElysiumAddress"
+              required
+              className="block
+                    mt-2
+                    w-full
+                    rounded-md
+                    border-gray-300
+                    py-3 px-4 shadow-sm
+                    focus:border-accent-50
+                    focus:ring-accent-500
+                    bg-gray-200
+                    text-gray-900"
+            />
           </div>
 
           <div>
@@ -189,3 +317,8 @@ export default function NFTSwapForm() {
     </div>
   );
 }
+
+// TODO: fix the required fields
+// TODO: add textbox
+// TODO: fix the styling
+// TODO: fix the overflow issue
