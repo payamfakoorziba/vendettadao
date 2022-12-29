@@ -4,6 +4,9 @@ import { toast } from "react-hot-toast";
 export default function NFTSwapForm() {
   const onSubmit = async () => {};
 
+  const [polygonInputs, setpolygonInputs] = useState([""]);
+  const [vechainInputs, setvechainInputs] = useState([""]);
+
   return (
     <div className="overflow-hidden py-16 px-4 sm:px-2 lg:px-8 lg:py-12">
       <div className="relative mx-auto max-w-xl text-gray-100">
@@ -181,21 +184,40 @@ export default function NFTSwapForm() {
                   ID
                 </p>
                 {/* TODO: textbox */}
-                <input
-                  type="text"
-                  id="transactionID"
-                  required
-                  className="block
-                    mt-2
-                    w-full
-                    rounded-md
-                    border-gray-300
-                    py-3 px-4 shadow-sm
-                    focus:border-accent-50
-                    focus:ring-accent-500
-                    bg-gray-200
-                    text-gray-900"
-                />
+                {polygonInputs.map((input, index) => {
+                  return (
+                    <input
+                      key={index}
+                      value={input}
+                      type="text"
+                      id="transactionID"
+                      required
+                      className="block
+                          mt-2
+                          w-full
+                          rounded-md
+                          border-gray-300
+                          py-3 px-4 shadow-sm
+                          focus:border-accent-50
+                          focus:ring-accent-500
+                          bg-gray-200
+                          text-gray-900"
+                      onChange={(e) => {
+                        const { value } = e.target;
+                        const list = [...polygonInputs];
+                        list[index] = value;
+                        setpolygonInputs(list);
+                      }}
+                      // add input when enter is pressed
+                      onKeyPress={(e) => {
+                        if (e.key === "Enter" && index === polygonInputs.length - 1) {
+                          e.preventDefault();
+                          setpolygonInputs([...polygonInputs, ""]);
+                        }
+                      }}
+                    />
+                  );
+                })}
                 <br />
                 <p>
                   <span className="font-bold">Paste your Elysium address </span>
@@ -250,21 +272,40 @@ export default function NFTSwapForm() {
               For multiple transactions, press ENTER after each transaction ID
             </p>
             {/* TODO: textbox */}
-            <input
-              type="text"
-              id="transactionID"
-              required
-              className="block
-                    mt-2
-                    w-full
-                    rounded-md
-                    border-gray-300
-                    py-3 px-4 shadow-sm
-                    focus:border-accent-50
-                    focus:ring-accent-500
-                    bg-gray-200
-                    text-gray-900"
-            />
+            {vechainInputs.map((input, index) => {
+                  return (
+                    <input
+                      key={index}
+                      value={input}
+                      type="text"
+                      id="transactionID"
+                      required
+                      className="block
+                          mt-2
+                          w-full
+                          rounded-md
+                          border-gray-300
+                          py-3 px-4 shadow-sm
+                          focus:border-accent-50
+                          focus:ring-accent-500
+                          bg-gray-200
+                          text-gray-900"
+                      onChange={(e) => {
+                        const { value } = e.target;
+                        const list = [...vechainInputs];
+                        list[index] = value;
+                        setvechainInputs(list);
+                      }}
+                      // add input when enter is pressed
+                      onKeyPress={(e) => {
+                        if (e.key === "Enter" && index === vechainInputs.length - 1) {
+                          e.preventDefault();
+                          setvechainInputs([...vechainInputs, ""]);
+                        }
+                      }}
+                    />
+                  );
+                })}
             <br />
             <p>
               <span className="font-bold">Paste your Elysium address </span>
