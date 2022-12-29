@@ -322,3 +322,4 @@ export default function NFTSwapForm() {
 // TODO: add textbox
 // TODO: fix the styling
 // TODO: fix the overflow issue
+// TODO: connect to server

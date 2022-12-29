@@ -77,7 +77,8 @@ const team = [
   },
   {
     name: "Jamie Thompson",
-    title: "Advisor & CEO of Vulcan Forged",
+    title:
+      "Advisor\nFounder/CEO of Vulcan Forged\nCreator of Elysium Blockchain",
     image: "/Team/jaime cowboy.png",
     className: "w-48",
   },
@@ -222,14 +223,14 @@ export default function Home() {
                 <br />
                 {showInfo && (
                   <p>
-                    We continually work to improve the existing game or build new
-                    games to further enhance the token’s utility. Ensuring that
-                    $VDT has the ability to grow while performing the role of an
-                    in-game token is a core focus of the Vendetta team. We know
-                    the ramifications of a token built on unsound principals.
-                    The tokenomics of the $VDT token were rigorously determined
-                    to ensure an optimal distribution. Making sure we have
-                    enough tokens in the right hands is key to our success.
+                    We continually work to improve the existing game or build
+                    new games to further enhance the token’s utility. Ensuring
+                    that $VDT has the ability to grow while performing the role
+                    of an in-game token is a core focus of the Vendetta team. We
+                    know the ramifications of a token built on unsound
+                    principals. The tokenomics of the $VDT token were rigorously
+                    determined to ensure an optimal distribution. Making sure we
+                    have enough tokens in the right hands is key to our success.
                   </p>
                 )}
               </div>
@@ -439,8 +440,8 @@ export default function Home() {
             </h2>
             <div>
               <div className="hidden md:block">
-                {[team.slice(0,3), team.slice(3,7), team.slice(7, 9)]
-                  .map((group, i) => (
+                {[team.slice(0, 3), team.slice(3, 7), team.slice(7, 9)].map(
+                  (group, i) => (
                     <div className=" p-1 flex" key={i}>
                       {group.map((member) => (
                         <div className="text-center w-full text-white flex-col flex items-center">
@@ -451,11 +452,15 @@ export default function Home() {
                             className={`${member.className} flex-shrink-0 rounded-full`}
                           />
                           <h2 className="text-3xl">{member.name}</h2>
-                          <h2 className="text-sm">{member.title}</h2>
+                          {/* split by \n and make a h2 tag for each */}
+                          {member.title.split("\n").map((title) => {
+                            return <h3 className="text-sm">{title}</h3>;
+                          })}
                         </div>
                       ))}
                     </div>
-                  ))}
+                  )
+                )}
               </div>
               <div className="md:hidden">
                 {team
