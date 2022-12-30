@@ -72,7 +72,7 @@ const navigation: NavItem[] = [
     items: [
       {
         name: <>Discord</>,
-        href: "https://discord.gg/akjJeWYaty"
+        href: "https://discord.gg/yd5U7uPjkK"
       },
       {
         name: <>Twitter</>,

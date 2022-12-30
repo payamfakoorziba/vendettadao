@@ -210,7 +210,10 @@ export default function NFTSwapForm() {
                       }}
                       // add input when enter is pressed
                       onKeyPress={(e) => {
-                        if (e.key === "Enter" && index === polygonInputs.length - 1) {
+                        if (
+                          e.key === "Enter" &&
+                          index === polygonInputs.length - 1
+                        ) {
                           e.preventDefault();
                           setpolygonInputs([...polygonInputs, ""]);
                         }
@@ -271,16 +274,15 @@ export default function NFTSwapForm() {
               <br />
               For multiple transactions, press ENTER after each transaction ID
             </p>
-            {/* TODO: textbox */}
             {vechainInputs.map((input, index) => {
-                  return (
-                    <input
-                      key={index}
-                      value={input}
-                      type="text"
-                      id="transactionID"
-                      required
-                      className="block
+              return (
+                <input
+                  key={index}
+                  value={input}
+                  type="text"
+                  id="transactionID"
+                  required
+                  className="block
                           mt-2
                           w-full
                           rounded-md
@@ -290,22 +292,25 @@ export default function NFTSwapForm() {
                           focus:ring-accent-500
                           bg-gray-200
                           text-gray-900"
-                      onChange={(e) => {
-                        const { value } = e.target;
-                        const list = [...vechainInputs];
-                        list[index] = value;
-                        setvechainInputs(list);
-                      }}
-                      // add input when enter is pressed
-                      onKeyPress={(e) => {
-                        if (e.key === "Enter" && index === vechainInputs.length - 1) {
-                          e.preventDefault();
-                          setvechainInputs([...vechainInputs, ""]);
-                        }
-                      }}
-                    />
-                  );
-                })}
+                  onChange={(e) => {
+                    const { value } = e.target;
+                    const list = [...vechainInputs];
+                    list[index] = value;
+                    setvechainInputs(list);
+                  }}
+                  // add input when enter is pressed
+                  onKeyPress={(e) => {
+                    if (
+                      e.key === "Enter" &&
+                      index === vechainInputs.length - 1
+                    ) {
+                      e.preventDefault();
+                      setvechainInputs([...vechainInputs, ""]);
+                    }
+                  }}
+                />
+              );
+            })}
             <br />
             <p>
               <span className="font-bold">Paste your Elysium address </span>
