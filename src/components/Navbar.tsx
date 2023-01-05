@@ -55,7 +55,7 @@ const navigation: NavItem[] = [
     items: [
       {
         name: "Litepaper",
-        href: "https://mcswyzzle-crypto-freedom.gitbook.io/vendettadao-lite-paper.2/general-overview/vendetta-ecosystem"
+        href: "https://mcswyzzle-crypto-freedom.gitbook.io/vendettadao-lite-paper-2.0/"
       },
       {
         name: "NFT Deck",
