@@ -63,6 +63,7 @@ const navigation: NavItem[] = [
       }
     ]
   },
+   { name: "Whitelist", href: "https://forms.gle/zTY9SkWRxAf674g88" },
   {
     name: "Social Media",
     items: [
