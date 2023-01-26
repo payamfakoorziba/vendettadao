@@ -58,11 +58,7 @@ const navigation: NavItem[] = [
         href: "https://mcswyzzle-crypto-freedom.gitbook.io/vendettadao-lite-paper-2.0/"
       },
       {
-        name: "NFT Deck",
-        href: "/NFT-DECK.pdf"
-      },
-      {
-        name: "Investment Proposal",
+        name: "Pitch Deck",
         href: "/VendettaDAO_pitchDeck_v1.3.pdf"
       }
     ]
