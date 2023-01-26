@@ -5,6 +5,7 @@ const navigation = {
     { name: 'Home', href: '/' },
     { name: 'Store', href: 'https://chalkrivergeneralstore.nftify.network/' },
     { name: 'Docs', href: 'https://mcswyzzle-crypto-freedom.gitbook.io/vendettadao-lite-paper.2/general-overview/vendetta-ecosystem' },
+    { name: 'Whitelist', href: 'https://forms.gle/zTY9SkWRxAf674g88' },
     { name: 'Contact', href: '/contact' },
   ],
   social: [
