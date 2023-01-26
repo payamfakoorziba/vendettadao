@@ -63,7 +63,7 @@ const navigation: NavItem[] = [
       },
       {
         name: "Investment Proposal",
-        href: "/Vendetta-Investment-Deck-1-1.pdf"
+        href: "/VendettaDAO_pitchDeck_v1.3.pdf"
       }
     ]
   },
